@@ -538,6 +538,26 @@ left:0;
       transform: rotate(-360deg);
     }
 }
+.wave_wrapper {
+  width: 100px;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+}
+svg.wave {
+    position: relative;
+    left: -10px;
+    width: 200px;
+    animation: wave 3s linear infinite;
+}
+@keyframes wave {
+  0% { 
+    left: -85px; 
+  }
+  100% { 
+    left: 0; 
+  }
+}
 .home {
   display: flex;
   flex-direction: column;

@@ -65,7 +65,9 @@ html(class='page  no-js', lang='ru')
           p #[a(href='tel:+79183009532') 8 918 300 95 32]
           p #[a(href='mailto:Lunela.makoi@gmail.com') Lunela.makoi@gmail.com] 
           p #[a(href='mailto:Lunela.makoi@gmail.com') @Lina_makoi_designer]    
-            
+          .wave_wrapper 
+              svg(class="wave" width="100px" height="43px")
+                use(xlink:href="img/sprite.svg#wave") 
       .page__footer-wrapper
         +page-footer()
           block footer
