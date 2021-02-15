@@ -1,10 +1,10 @@
 # Проект LUNA  ![Test Status](https://travis-ci.org/nicothin/NTH-start-project.svg?branch=master) [![devDependencies Status](https://david-dm.org/nicothin/NTH-start-project/dev-status.svg)](https://david-dm.org/nicothin/NTH-start-project?type=dev) [![dependencies Status](https://david-dm.org/nicothin/NTH-start-project/status.svg)](https://david-dm.org/nicothin/NTH-start-project)
 
 Страницы:
-#[a(href='https://uldalex.github.io/luna/build/index.html') Главная]
+#[Главная](https://uldalex.github.io/luna/build/index.html) 
 ## Парадигма
 
-- Именование классов по БЭМ, разметка в [pug](https://pugjs.org/), стилизация [Sass](http://sass-lang.com/). См. [как работать с CSS-препроцессорами и БЭМ](http://nicothin.github.io/idiomatic-pre-CSS/)
+- Именование классов по БЭМ, разметка в [pug](https://pugjs.org/), стилизация [Sass](http://sass-lang.com/). 
 - Каждый БЭМ-блок в своей папке внутри `src/blocks/`. Один БЭМ-блок — один pug-файл, один scss-файл, один js-файл.
 - Список использованных в проекте доп. файлов — в `config.js`.
 - Есть глобальные файлы: стилевые (стили печати), js (по умолчанию пуст), шрифты, картинки.
