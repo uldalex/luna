@@ -470,6 +470,7 @@ pre {
 .bottom-block {
   padding-bottom:50px;
   position:relative;
+  width:100%;
   
   & ul {
     padding:0;
@@ -497,6 +498,9 @@ pre {
     & ul {
         top:-180%;
       }
+    & .wave_wrapper {
+      width:70px;
+    }
   }
   @media screen and (max-width: 370px) { 
       padding-bottom: 20px;
@@ -543,6 +547,7 @@ left:0;
   overflow: hidden;
   position: absolute;
   right: 0;
+  top:30px;
 }
 svg.wave {
     position: relative;
