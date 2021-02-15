@@ -1,0 +1,38 @@
+//- Все примеси в этом файле должны начинаться c имени блока (victory)
+
+mixin victory(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +victory('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' victory--' + modsList[i].trim();
+      }
+    }
+
+  .victory(class=allMods)&attributes(attributes)
+    .victory__inner
+      .victory__row
+        h3 Наши победы
+        .splide#victory
+          .victory_carousel__store-desckription
+          .splide__track
+             ul.splide__list.victory__list
+                li.splide__slide
+                  .victory__slide
+                    a(href="#").victory__link Юристы практики банкротства сохранили активы клиента в размере 4,45 млрд руб. в споре о субсидиарный ответственности.
+                li.splide__slide
+                  .victory__slide
+                    a(href="#").victory__link Юристы практики таможенного права «Пепеляев Групп» завершили проект по судебному обжалованию и признанию незаконным отказа таможенного органа клиенту.				
+                li.splide__slide
+                  .victory__slide
+                    a(href="#").victory__link Антимонопольная практика «Пепеляев Групп» успешно доказали отсутствие картельного сговора на рынке дорожного строительства в Новосибирском УФАС.				
+      block

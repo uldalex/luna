@@ -1,0 +1,81 @@
+// В этом файле должны быть стили для БЭМ-блока search, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.search {
+
+  $block-name:                &; // #{$block-name}__element
+  position: absolute;
+    top: 100%;
+    margin-top: 10px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: left .5s linear;
+    transition: left .5s linear;
+    background-color:#f2e9f1;
+    transition: all 2s linear;
+  
+    &--open {
+      height:auto;
+      max-height: 1000px;;
+    }
+
+    &__inner {
+      @include container();
+    }
+
+    &__row {
+      @include row();
+      position:relative;
+    }
+
+    &__form {
+      @include col(md, 8)
+      @include col-offset(md, 2);
+      padding: 2rem 0;
+    }
+
+    &__text {
+      @include col(md, 8);
+      padding: 1rem 0;
+      border: 1px solid #7E2E84;
+
+      &:focus {
+        border: 2px solid #7E2E84;
+        outline: none;
+
+      }
+    }
+
+    &__submit {
+      @include col(md, 3)
+      margin: 0 20px;
+      padding: 1rem 0;
+      border: 1px solid #7E2E84;
+      color:#ffffff;
+      background-color: #7E2E84;
+      outline: none;
+
+      &:hover {
+        background-color: $vaiolit-hover;
+      }
+      &:focus {
+        background-color: $vaiolit-hover;
+      }
+      &:active {
+        background-color: $vaiolit-hover;
+      }
+    }
+    &-close{
+      position: absolute;
+      right: 0;
+      top: 10px;
+      fill: #84097d; 
+    } 
+}
+ 

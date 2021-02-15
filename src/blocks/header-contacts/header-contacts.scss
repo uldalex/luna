@@ -1,0 +1,47 @@
+// В этом файле должны быть стили для БЭМ-блока header-contacts, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header-contacts {
+
+  $block-name:                &; // #{$block-name}__element
+  @include col(md, 5);
+  @include col-offset(md, 1);
+
+
+  &__inner {
+    @include row();
+    display: flex;
+    align-items: center;
+  }
+
+  &__phone {
+    @include col(md, 6);
+    font-size: 1.5em;
+    text-align: right;
+    color: $black;
+    text-decoration: none;
+    border-bottom: 1px dashed transparent;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $black;
+      border-bottom: 1px dashed $black;
+    }
+  }
+
+  &__footer {
+    @include col(md, 6);
+    @include col-offset(md, 6);
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 0.5em;
+  }
+
+  &__btn {
+    @include white-btn;
+    @include btn;
+    background-color: #f8f6f6;
+  }
+}

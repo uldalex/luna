@@ -8,13 +8,15 @@ let config = {
     'no-js',
   ],
   'alwaysAddBlocks': [
-    // 'sprite-svg',
-    // 'sprite-png',
-    // 'object-fit-polyfill',
+     'sprite-svg',
+     'sprite-png',
+     'object-fit-polyfill',
   ],
   'addStyleBefore': [
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
+    'src/scss/base.scss'
+    
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -33,9 +35,9 @@ let config = {
     'src/fonts/YanoneKaffeesatzBold.woff': 'fonts/',
     'src/fonts/YanoneKaffeesatzMedium.woff': 'fonts/',
     'src/fonts/Vollkorn.woff': 'fonts/',
-    'src/img/demo-*.{png,svg,jpg,jpeg}': 'img/',
-    // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
-    // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',
+    'src/fonts/SFRegular.woff': 'fonts/',
+    "./src/img/*.{png,svg,jpg,jpeg}": "img/",
+     'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',
   },
   'dir': {
     'src': 'src/',

@@ -1,0 +1,62 @@
+@mixin black-btn() {
+  background: $black;
+  color: $white;
+  border: 1px solid transparent;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: invert($black);
+    color: invert($white);
+    border: 1px solid $black;
+    transition: all 0.5s ease;
+  }
+}
+
+@mixin white-btn() {
+  background: $white;
+  color: $black;
+  border: 1px solid $black;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: invert($white);
+    color: invert($black);
+    border: 1px solid transparent;
+    transition: all 0.5s ease;
+  }
+}
+
+@mixin viber-btn() {
+  background: $white;
+  color: $black;
+  border: 1px solid $vaiolit;
+  border-radius: 30px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: $vaiolit;
+    color:$white;
+    border: 1px solid $vaiolit;
+    transition: all 0.5s ease;
+  }
+}
+
+@mixin btn() {
+  text-decoration: none;
+  padding: 0.5em 1.5em;
+  border-radius: 20px;
+  transition: all 0.3s linear 0s;
+  font-weight: 300;
+  font-size: 0.87em;
+  text-align: center;
+  letter-spacing: 0.05em;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+  }
+}

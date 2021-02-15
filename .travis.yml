@@ -1,7 +1,13 @@
 language: node_js
 
 node_js:
-  - "8.11"
+  - "8.12"
 
 notifications:
   email: true
+
+deploy:
+  provider: heroku
+  app: "uldalex-flowers"
+  api_key:
+    secure: "d234c9a4-1700-44c0-b615-2f7e27bbf397"

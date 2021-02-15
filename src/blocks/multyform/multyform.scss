@@ -1,0 +1,264 @@
+// В этом файле должны быть стили для БЭМ-блока multyform, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.multyform {
+
+  $block-name:                &; // #{$block-name}__element
+  margin: 3em 0;
+  background-image: url('/img/form-bg.jpg');
+  background-position: top center;
+  background-size: cover;
+
+  &__inner {
+    @include container();
+  }
+
+  &__content {
+    @include col(md, 5);
+    @include col-offset(md, 1);
+    position: relative;
+    padding-top: 2em;
+    padding-bottom: 2em;
+  }
+
+  &__title {
+    font-family: 'Playfair Display SC', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__title--big {
+    display: block;
+    font-size: 2.8em;
+    font-weight: 900;
+    letter-spacing: 0;
+    word-break: initial;
+  }
+
+  &__title--bigger {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -0.37em;
+    font-size: 13.5em;
+    line-height: 0.8;
+    font-weight: 900;
+
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      background-color: #1a1a1a;
+      right: 60px;
+      bottom: 10px;
+      width: 250px;
+      height: 1px;
+    }
+  }
+
+  &__form-title {
+    color: $gray-light;
+  }
+
+  &__form-title--result {
+    color: #1a1a1a;
+  }
+
+  &__form-title-span {
+    display: block;
+    font-size: 1.3em;
+    text-transform: uppercase;
+    padding: 1em 0;
+    font-weight: 600;
+  }
+
+  &__form-list {
+    @include row();
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__form-item {
+    @include col(xs, 6, $grid-columns, 0);
+  }
+
+  &__form-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__form-input + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    padding: 15px 0;
+    color: $gray-light;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 20px;
+      height: 30px;
+      margin: 0;
+      background-repeat: no-repeat;
+      margin-right: 0.5em;
+    }
+  }
+
+  &__form-input:not(:disabled):not(:checked) + label:hover {
+    color: #1a1a1a;
+  }
+
+  &__form-input:not(:disabled):not(:checked) + label:hover::before {
+    background-image: url('/img/radio.svg');
+  }
+
+  &__form-input:checked + label {
+    color: #1a1a1a;
+  }
+
+  &__form-input:checked + label::before {
+    background-image: url('/img/radio.svg');
+  }
+
+  &__form-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+  }
+
+  &__form-link {
+    @include btn();
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+  }
+
+  &__form-link--back {
+    color: $gray-lighten;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: #1a1a1a;
+    }
+  }
+
+  &__form-svg {
+    width: 19px;
+    height: 10px;
+    margin-right: 10px;
+  }
+
+  &__form-svg--back {
+    transform: rotate(-180deg);
+  }
+
+  &__form-link--next {
+    @include black-btn();
+    display: inline-block;
+  }
+
+  &__form-link--viber {
+    @include viber-btn();
+    letter-spacing: 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+
+      > svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &__form-svg-viber {
+    margin-right: 5px;
+    width: 32px;
+    height: 32px;
+    fill: $vaiolit;
+  }
+
+  &__form-link--coll {
+    @include white-btn();
+    letter-spacing: 0;
+    padding: 0.9em 1em;
+    border-radius: 30px;
+
+    &:hover {
+
+      > svg {
+        fill: $white;
+      }
+    }
+  }
+
+  &__form-svg-coll {
+    margin-right: 10px;
+    width: 19px;
+    height: 19px;
+  }
+}
+
+
+
+.multyform-form {
+
+  &__buttons {
+    @include row();
+  }
+
+  &__nav {
+    @include col(xs, 6);
+    z-index: 5;
+
+    & input[type='tel'],
+    & input[type='text'] {
+      background-color: #f8f8f8;
+      border: 1px solid #a1a1a1;
+      padding: 10px;
+      border-radius: 4px;
+    }
+
+    & button {
+      @include btn();
+      @include black-btn();
+      margin: 20px 0;
+
+      > svg {
+        width: 19px;
+        height: 10px;
+        margin-left: 10px;
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
+
+
+#step_1,
+#step_2,
+#step_3 {
+  position: absolute;
+  opacity: 0;
+  z-index: 0;
+  left: -100%;
+
+  &.open {
+    position: relative;
+    opacity: 1;
+    z-index: 1;
+    left: 0;
+  }
+}
+
+

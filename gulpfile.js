@@ -180,10 +180,10 @@ function generateSvgSprite(cb) {
         return { plugins: [{ cleanupIDs: { minify: true } }] }
       }))
       .pipe(svgstore({ inlineSvg: true }))
-      .pipe(rename('sprite.svg'))
-      .pipe(dest(`${dir.blocks}sprite-svg/img/`));
+     .pipe(rename('sprite.svg'))
+     .pipe(dest(`${dir.blocks}sprite-svg/img/`));
   }
-  else {
+ else {
     cb();
   }
 }

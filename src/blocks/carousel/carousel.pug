@@ -1,0 +1,71 @@
+//- Все примеси в этом файле должны начинаться c имени блока (carousel)
+
+mixin carousel(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +carousel('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' carousel--' + modsList[i].trim();
+      }
+    }
+
+  .carousel(class=allMods)&attributes(attributes)
+    .carousel__inner
+     .splide#carousel
+      .carousel__store-desckription
+      .splide__track
+       ul.splide__list
+        li.splide__slide
+         figure
+          .slide-desckription
+            h3.slide-desckription__title Новости компании
+            h4.slide-desckription__text «Пепеляев Групп» подтвердила лидерство в рейтинге World Tax and Transfer Pricing, 2021
+          img(src='img/banner-0.png', alt='Новости компании')
+        li.splide__slide
+         figure
+          .slide-desckription
+            h3.slide-desckription__title Новости компании
+            h4.slide-desckription__text «Пепеляев Групп» подтвердила лидерство в рейтинге World Tax and Transfer Pricing, 2021
+          img(src='img/banner-1.png', alt='Новости компании')
+        li.splide__slide
+         figure
+          .slide-desckription
+            h3.slide-desckription__title Новости компании
+            h4.slide-desckription__text «Пепеляев Групп» подтвердила лидерство в рейтинге World Tax and Transfer Pricing, 2021
+          img(src='img/banner-2.png', alt='Новости компании')
+        li.splide__slide
+         figure
+          .slide-desckription
+            h3.slide-desckription__title Новости компании
+            h4.slide-desckription__text «Пепеляев Групп» подтвердила лидерство в рейтинге World Tax and Transfer Pricing, 2021
+          img(src='img/banner-3.png', alt='Новости компании')
+        li.splide__slide
+         figure
+          .slide-desckription
+            h3.slide-desckription__title Новости компании
+            h4.slide-desckription__text «Пепеляев Групп» подтвердила лидерство в рейтинге World Tax and Transfer Pricing, 2021
+          img(src='img/banner-4.png', alt='Новости компании')
+        li.splide__slide
+         figure
+          .slide-desckription
+            h3.slide-desckription__title Новости компании
+            h4.slide-desckription__text «Пепеляев Групп» подтвердила лидерство в рейтинге World Tax and Transfer Pricing, 2021
+          img(src='img/banner-5.png', alt='Новости компании')
+        li.splide__slide
+         figure
+          .slide-desckription
+           h3.slide-desckription__title Новости компании
+           h4.slide-desckription__text «Пепеляев Групп» подтвердила лидерство в рейтинге World Tax and Transfer Pricing, 2021
+          img(src='img/banner-6.png', alt='Новости компании')
+      block
+
+

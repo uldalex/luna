@@ -1,0 +1,315 @@
+//- Все примеси в этом файле должны начинаться c имени блока (flowers)
+
+mixin flowers(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +flowers('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' flowers--' + modsList[i].trim();
+      }
+    }
+  section#about
+         h2.section-title <span>Выразите свои</span><br>чувства иначе
+  .flowers(class=allMods)&attributes(attributes)
+    .flowers__inner
+      .flowers__row
+        .flowers__column
+         img.flowers__img(src='/img/flower_1.jpg', alt='Фантастическая композиция')
+        .flowers__column
+          .flowers__content
+            .flowers__background 01
+            .flowers__title Фантастическая композиция
+            .flowers__text
+              p Каждый букет - это уникальная цветочная история, созданная нашими талантливыми флористами для особых людей и моментов.
+              p Даже самые простые композиции вызывают радость и бурю эмоций, ведь это прекрасное сочетание необычной упаковки, красивых растений и цветовой палитры.
+      .flowers__row
+        .flowers__border
+        .flowers__column
+          .flowers__content
+            .flowers__background 02
+            .flowers__title Свежие цветы премиум-класса
+            .flowers__text
+              p Мы создаем букеты только из свежих растений голландских и эквадорских сортов премиум-класса, поэтому от наших композиций всегда веет свежестью и настоящей красотой.
+              p Наши букеты гармонично передадут ваше настроение, точно донесут теплые чувства и долго простоят в вазе, радуя обладателя.
+        .flowers__column
+          img.flowers__img(src='/img/flower_2.png', alt='Свежие цветы премиум-класса')
+      .flowers__row
+        .flowers__column.flowers__column--last
+          img.flowers__img(src='/img/flower_3.png', alt='Оригинальный дизайн упаковки')
+        .flowers__column
+          .flowers__content
+            .flowers__background 03
+            .flowers__title Оригинальный дизайн упаковки
+            .flowers__text
+              p Нам необходимо тезисное описание упаковки, почему она крутая, чтобы мы могли составить преимущеста.
+              p Даже самые простые наши композиции вызывают восторг и эмоции, ведь это прекрасное сочетание необычной упаковки, красивых растений и цветовой палитры.
+  section#bue
+         h2.section-title <span>Выберите свою</span><br>волшебную композициюй
+  .flowers(class=allMods)&attributes(attributes)
+    .flowers__innerq
+      .flowers__row
+        .flowers__border.flowers__border--bue
+        .flowers__subtitle.flowers__subtitle--left ...создана удивлять
+        .flowers__column
+          .flowers__content.flowers__content--bue
+            .flowers__title.flowers__title--bue «Название композиции»
+            .flowers__text
+              p Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение
+            .flowers__price 1570 ₽
+            .flowers__payment
+              svg(class='icons flowers__payment-svg')
+                use(xlink:href='img/sprite.svg#deposit')
+              span Оплата наличными или картой
+            .flowers__delovery
+              svg(class='icons flowers__delovery-svg')
+                use(xlink:href='img/sprite.svg#fast-delivery')
+              span Возможна доставка в течение 1 часа
+            .flowers__buttons
+              .flowers__viber-container
+                a.flowers__bue(href='#') Заказать
+              .flowers__viber-container
+                a.flowers__viber(href='#')
+                  svg(class='icons' width='20' height='21' viewBox='0 0 28 31')
+                    use(xlink:href='img/sprite.svg#viber')
+        .flowers__column
+         img.flowers__img(src='/img/flower_4.jpg', alt='Название композиции')
+      .flowers__row
+        .flowers__column
+         img.flowers__img(src='/img/flower_5.jpg', alt='Название композиции')
+        .flowers__border.flowers__border--bue
+        .flowers__subtitle.flowers__subtitle--right ...передает главные чувства
+        .flowers__column
+          .flowers__content.flowers__content--bue
+            .flowers__title.flowers__title--bue «Название композиции»
+            .flowers__text
+              p Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение
+            .flowers__price 1570 ₽
+            .flowers__payment
+              svg(class='icons flowers__payment-svg')
+                use(xlink:href='img/sprite.svg#deposit')
+              span Оплата наличными или картой
+            .flowers__delovery
+              svg(class='icons flowers__delovery-svg')
+                use(xlink:href='img/sprite.svg#fast-delivery')
+              span Возможна доставка в течение 1 часа
+            .flowers__buttons
+              .flowers__viber-container
+                a.flowers__bue(href='#') Заказать
+              .flowers__viber-container
+                a.flowers__viber(href='#')
+                  svg(class='icons' width='20' height='21' viewBox='0 0 28 31')
+                    use(xlink:href='img/sprite.svg#viber')
+      .flowers__row
+        .flowers__border.flowers__border--bue
+        .flowers__subtitle.flowers__subtitle--left ...дарит хорошее настроение
+        .flowers__column
+          .flowers__content.flowers__content--bue
+            .flowers__title.flowers__title--bue «Название композиции»
+            .flowers__text
+              p Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение
+            .flowers__price 1570 ₽
+            .flowers__payment
+              svg(class='icons flowers__payment-svg')
+                use(xlink:href='img/sprite.svg#deposit')
+              span Оплата наличными или картой
+            .flowers__delovery
+              svg(class='icons flowers__delovery-svg')
+                use(xlink:href='img/sprite.svg#fast-delivery')
+              span Возможна доставка в течение 1 часа
+            .flowers__buttons
+              .flowers__viber-container
+                a.flowers__bue(href='#') Заказать
+              .flowers__viber-container
+                a.flowers__viber(href='#')
+                  svg(class='icons' width='20' height='21' viewBox='0 0 28 31')
+                    use(xlink:href='img/sprite.svg#viber')
+        .flowers__column
+         img.flowers__img(src='/img/flower_6.jpg', alt='Название композиции')
+  section#buket
+         h2.section-title <span>Выберите свой</span><br>неповторимый букет
+  .flowers(class=allMods)&attributes(attributes)
+    .flowers__inner
+      .flowers__row
+        .flowers__border.flowers__border--bue
+        .flowers__subtitle.flowers__subtitle--left ...дарит радость
+        .flowers__column
+          .flowers__content.flowers__content--bue
+            .flowers__title.flowers__title--bue «Название букета»
+            .flowers__text
+              p Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение
+            .flowers__price 1570 ₽
+            .flowers__payment
+              svg(class='icons flowers__payment-svg')
+                use(xlink:href='img/sprite.svg#deposit')
+              span Оплата наличными или картой
+            .flowers__delovery
+              svg(class='icons flowers__delovery-svg')
+                use(xlink:href='img/sprite.svg#fast-delivery')
+              span Возможна доставка в течение 1 часа
+            .flowers__buttons
+              .flowers__viber-container
+                a.flowers__bue(href='#') Заказать
+              .flowers__viber-container
+                a.flowers__viber(href='#')
+                  svg(class='icons' width='20' height='21' viewBox='0 0 28 31')
+                    use(xlink:href='img/sprite.svg#viber')
+        .flowers__column
+         img.flowers__img(src='/img/flower_4.jpg', alt='Название композиции')
+      .flowers__row
+        .flowers__column
+         img.flowers__img(src='/img/flower_5.jpg', alt='Название композиции')
+        .flowers__border.flowers__border--bue
+        .flowers__subtitle.flowers__subtitle--right ...воплощение нежности
+        .flowers__column
+          .flowers__content.flowers__content--bue
+            .flowers__title.flowers__title--bue «Название букета»
+            .flowers__text
+              p Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение
+            .flowers__price 1570 ₽
+            .flowers__payment
+              svg(class='icons flowers__payment-svg')
+                use(xlink:href='img/sprite.svg#deposit')
+              span Оплата наличными или картой
+            .flowers__delovery
+              svg(class='icons flowers__delovery-svg')
+                use(xlink:href='img/sprite.svg#fast-delivery')
+              span Возможна доставка в течение 1 часа
+            .flowers__buttons
+              .flowers__viber-container
+                a.flowers__bue(href='#') Заказать
+              .flowers__viber-container
+                a.flowers__viber(href='#')
+                  svg(class='icons' width='20' height='21' viewBox='0 0 28 31')
+                    use(xlink:href='img/sprite.svg#viber')
+      .flowers__row
+        .flowers__border.flowers__border--bue
+        .flowers__subtitle.flowers__subtitle--left ...говорит о любви
+        .flowers__column
+          .flowers__content.flowers__content--bue
+            .flowers__title.flowers__title--bue «Название букета»
+            .flowers__text
+              p Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение
+            .flowers__price 1570 ₽
+            .flowers__payment
+              svg(class='icons flowers__payment-svg')
+                use(xlink:href='img/sprite.svg#deposit')
+              span Оплата наличными или картой
+            .flowers__delovery
+              svg(class='icons flowers__delovery-svg')
+                use(xlink:href='img/sprite.svg#fast-delivery')
+              span Возможна доставка в течение 1 часа
+            .flowers__buttons
+              .flowers__viber-container
+                a.flowers__bue(href='#') Заказать
+              .flowers__viber-container
+                a.flowers__viber(href='#')
+                  svg(class='icons' width='20' height='21' viewBox='0 0 28 31')
+                    use(xlink:href='img/sprite.svg#viber')
+        .flowers__column
+         img.flowers__img(src='/img/flower_6.jpg', alt='Название композиции')
+  section#spring
+         h2.section-title <span>Выберите цветы</span><br>с весенним настроением
+  .flowers(class=allMods)&attributes(attributes)
+    .flowers__inner
+      .flowers__row
+        .flowers__border.flowers__border--bue
+        .flowers__subtitle.flowers__subtitle--left ...дарит весеннее настроение
+        .flowers__column
+          .flowers__content.flowers__content--bue
+            .flowers__title.flowers__title--bue «Название букета»
+            .flowers__text
+              p Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение
+            .flowers__price 1570 ₽
+            .flowers__payment
+              svg(class='icons flowers__payment-svg')
+                use(xlink:href='img/sprite.svg#deposit')
+              span Оплата наличными или картой
+            .flowers__delovery
+              svg(class='icons flowers__delovery-svg')
+                use(xlink:href='img/sprite.svg#fast-delivery')
+              span Возможна доставка в течение 1 часа
+            .flowers__buttons
+              .flowers__viber-container
+                a.flowers__bue(href='#') Заказать
+              .flowers__viber-container
+                a.flowers__viber(href='#')
+                  svg(class='icons' width='20' height='21' viewBox='0 0 28 31')
+                    use(xlink:href='img/sprite.svg#viber')
+        .flowers__column
+         img.flowers__img(src='/img/flower_4.jpg', alt='Название композиции')
+      .flowers__row
+        .flowers__column
+         img.flowers__img(src='/img/flower_5.jpg', alt='Название композиции')
+        .flowers__border.flowers__border--bue
+        .flowers__subtitle.flowers__subtitle--right ...гармония весны
+        .flowers__column
+          .flowers__content.flowers__content--bue
+            .flowers__title.flowers__title--bue «Название букета»
+            .flowers__text
+              p Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение
+            .flowers__price 1570 ₽
+            .flowers__payment
+              svg(class='icons flowers__payment-svg')
+                use(xlink:href='img/sprite.svg#deposit')
+              span Оплата наличными или картой
+            .flowers__delovery
+              svg(class='icons flowers__delovery-svg')
+                use(xlink:href='img/sprite.svg#fast-delivery')
+              span Возможна доставка в течение 1 часа
+            .flowers__buttons
+              .flowers__viber-container
+                a.flowers__bue(href='#') Заказать
+              .flowers__viber-container
+                a.flowers__viber(href='#')
+                  svg(class='icons' width='20' height='21' viewBox='0 0 28 31')
+                    use(xlink:href='img/sprite.svg#viber')
+      .flowers__row
+        .flowers__border.flowers__border--bue
+        .flowers__subtitle.flowers__subtitle--left ...говорит о любви
+        .flowers__column
+          .flowers__content.flowers__content--bue
+            .flowers__title.flowers__title--bue «Название букета»
+            .flowers__text
+              p Прекрасно передаст всю вашу нежность, украсит атмосферу вечера, и придаст отличное настроение
+            .flowers__price 1570 ₽
+            .flowers__payment
+              svg(class='icons flowers__payment-svg')
+                use(xlink:href='img/sprite.svg#deposit')
+              span Оплата наличными или картой
+            .flowers__delovery
+              svg(class='icons flowers__delovery-svg')
+                use(xlink:href='img/sprite.svg#fast-delivery')
+              span Возможна доставка в течение 1 часа
+            .flowers__buttons
+              .flowers__viber-container
+                a.flowers__bue(href='#') Заказать
+              .flowers__viber-container
+                a.flowers__viber(href='#')
+                  svg(class='icons' width='20' height='21' viewBox='0 0 28 31')
+                    use(xlink:href='img/sprite.svg#viber')
+        .flowers__column
+         img.flowers__img(src='/img/flower_6.jpg', alt='Название композиции')
+    section#bron
+      .flowers(class=allMods)&attributes(attributes)
+        .flowers__row.flowers__row--form
+          .flowers__column
+            img.flowers__img(src='/img/tulpus.png', alt='Тюльпаны')
+          .flowers__column.flowers__column--mini
+            div
+              h2.section-title.section-title--big <span>Хотите забронировать</span><br>Букет на 8 марта?
+              .flowers__text
+               .flowers__line
+               p Соберем букет без предоплаты, привезем в нужное время и место по указанному адресу
+               .flowers__buttons
+                 .flowers__viber-container
+                   a.flowers__bue(href='#') Забронировать
+  block

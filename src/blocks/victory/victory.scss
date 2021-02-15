@@ -1,0 +1,217 @@
+// В этом файле должны быть стили для БЭМ-блока victory, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.victory {
+
+  $block-name:                &; // #{$block-name}__element
+  background-color: #f3ecf3;
+  margin-bottom: 30px;
+  padding: 30px 0;
+  
+  
+  &__inner {
+    @include container();
+  }
+  &__row {
+    padding-left: 15px;
+    padding-right: 15px;
+   }
+  &__list {
+    margin:0;
+    padding:0;
+  }
+  & .splide__slide{
+    padding: 1rem 1rem 1rem 0rem;
+  }
+  &__slide{
+    list-style: none;
+    text-align: center;
+    background-color: #fff;
+    padding: 100px 30px;
+    margin-top: 20px;
+    height: 317px;
+    margin-bottom: 70px;
+    transition: all 0.5s linear;
+
+    & a {
+      color: #272C3E;
+      font-size: 18px;
+      line-height: 130%;
+      font-family: 'GeometriaLight';
+      text-decoration: none;
+      transition: all 0.5s linear;
+      }
+
+    &:hover {
+      background-color: #92278f;
+
+    & a{
+        color:#ffffff;
+      }
+    }
+  }
+  
+    
+}
+
+// В этом файле должны быть стили для БЭМ-блока carousel, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$arrow-button-size: 2em !default;
+
+// Arrow SVG size.
+$arrow-size: 1.2em !default;
+
+// Dots indicator size.
+$dot-size: 12px !default;
+
+// Height of a progress bar.
+$progress-bar-height: 3px !default;
+
+$spinner-size: 20px;
+
+//arrows
+.splide {
+  position: relative;
+  visibility: hidden;
+  outline: none;
+  $root: &;
+
+  &__container {
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  &__list {
+    display: flex;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+  }
+
+  &.is-active {
+
+    #{$root}__list {
+      display: flex;
+    }
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    position: relative;
+    list-style-type: none;
+    margin: 0;
+    outline: none;
+
+    img {
+      vertical-align: bottom;
+    }
+  }
+
+  &__slider {
+    position: relative;
+  }
+
+  &__spinner {
+ 
+  }
+
+  &__track {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    width: 40px;
+    height: 32px;
+    border: none;
+    padding: 0;
+    background: transparent;
+    transform: translateY( -50% );
+
+   
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.9;
+
+      svg {
+        transition: 0.5s;
+        stroke:#f2e9f1;
+      }
+
+      circle {
+        fill: $black;
+        stroke: $black;
+        stroke-width: 1px;
+        transition: 0.5s;
+      }
+
+      path {
+        fill: $white;
+        fill-rule: evenodd;
+        transition: 0.5s;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+
+
+
+  }
+ 
+}
+#victory {
+  .splide__pagination {
+    display:none;
+     
+   }
+  & .splide__arrow {
+    transform: translate( -50%, 0 );
+
+    &--prev {
+      top: 40%;
+      left: -20px;
+
+      svg {
+        transform: rotateZ( 0deg );
+        stroke:#222222;
+        transition: 0.5s;
+      }
+
+      path {
+        fill: $black;
+        fill-rule: evenodd;
+        transition: 0.5s;
+      }
+    }
+
+    &--next {
+      top: 40%;
+      right: -60px;
+
+      svg {
+        transform: rotateZ( 180deg );
+        stroke:#222222;
+        transition: 0.5s;
+      }
+    }
+  }
+}
+
+
+
+

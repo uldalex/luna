@@ -1,0 +1,82 @@
+// В этом файле должны быть стили для БЭМ-блока header-menu, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.header-menu {
+
+  $block-name:                &; // #{$block-name}__element
+  @include col(lg, 7);
+  @include col(md, 8);
+  @include col-offset(lg, 2);
+  @include col-offset(md, 1);
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0;
+    padding: 0;
+    list-style:none;
+  }
+    &__item {
+      position: relative;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    
+    & svg {
+      margin-right:14px;
+    }
+  }
+  &__language-list{
+    display:none;
+    position: absolute;
+    top: 28px;
+    margin: 0;
+    padding: 0;
+    background-color: #f2e9f1;
+
+    & li {
+      list-style: none;
+      font-size: 14px;
+      padding: 0;
+
+    & a{
+      color:#272c3e;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      border-bottom: 1px solid #e2b6dd;
+      padding: .3rem 0.5rem;
+
+      &:hover, &:focus{
+        background-color: #852e81;
+        color: #e2b6dd;
+      }
+    }
+    }
+    &--open{
+      display:block;
+    } 
+  }
+  &__link { 
+     font-size: 14px;
+     color: $text-color-muted;
+     text-decoration:none;
+     font-family:'GeometriaMedium';
+  }
+  &__language {
+    text-decoration: underline;
+  }
+
+} 
+@media (max-width:768px){
+ 
+  .header-menu {
+    &__item {
+    flex-direction: column;
+    
+  }
+  }
+}
+

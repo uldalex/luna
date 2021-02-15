@@ -14,8 +14,7 @@ html(class='page  no-js', lang='ru')
     meta(name='format-detection', content='address=no')
     meta(name='format-detection', content='email=no')
     meta(content='notranslate', name='google')
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;600&display=swap" rel="stylesheet">
+   
     //- Фавиконки (https://realfavicongenerator.net)
     //- link(rel='apple-touch-icon', sizes='180x180', href='/img/favicon/apple-touch-icon.png')
     //- link(rel='icon', type='image/png', sizes='32x32', href='/img/favicon/favicon-32x32.png')
@@ -37,17 +36,37 @@ html(class='page  no-js', lang='ru')
 
   body
     noscript У вас отключен JavaScript. Это пугает.
-
+   
     .page__inner
-      .page__content
-
-
+      .page__content.home
+        .water_wrapper 
+          .water
         block content
-          p содержимое
-        
-      .page__footer-wrapper
+          h1 Luna Makoi Project
+          ul.main_menu 
+            li #[a(href='/') обо мне]
+            li #[a(href='/') Проекты]
+            li #[a(href='/') Новости]
+            li #[a(href='/') Услуги]
         +bottom-block()
-          p 8 918 300 95 32   Lunela.makoi@gmail.com @Lina_makoi_designer
+          ul.sotial 
+            li 
+              a.insta(href='/')
+                svg(class="sotial" width="23px" height="23px")
+                  use(xlink:href="img/sprite.svg#insta") 
+            li 
+              a.fb(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#fb") 
+            li 
+              a.twitter(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#twitter") 
+          p #[a(href='tel:+79183009532') 8 918 300 95 32]
+          p #[a(href='mailto:Lunela.makoi@gmail.com') Lunela.makoi@gmail.com] 
+          p #[a(href='mailto:Lunela.makoi@gmail.com') @Lina_makoi_designer]    
+            
+      .page__footer-wrapper
         +page-footer()
           block footer
             .row
@@ -60,5 +79,4 @@ html(class='page  no-js', lang='ru')
                   li  #[a(href='/') Новости]
                   li  #[a(href='/') Услуги]
                 div.footer-right Luna <br> Makoi <br> Project
-    block page-bottom
-      script(src='js/bundle.js')
+    script(src='js/bundle.js')

@@ -1,0 +1,105 @@
+//- Все примеси в этом файле должны начинаться c имени блока (multyform)
+
+mixin multyform(text, mods)
+
+  //- Принимает:
+  //-   text    {string} - текст
+  //-   mods    {string} - список модификаторов
+  //- Вызов:
+        +multyform('Текст', 'some-mod')
+
+  -
+    // список модификаторов
+    var allMods = '';
+    if(typeof(mods) !== 'undefined' && mods) {
+      var modsList = mods.split(',');
+      for (var i = 0; i < modsList.length; i++) {
+        allMods = allMods + ' multyform--' + modsList[i].trim();
+      }
+    }
+
+  .multyform(class=allMods)&attributes(attributes)
+    .multyform__inner
+     .multyform__content
+      form(metod="get" action="mail.php" ).multyform__form.multyform-form.ajax-form
+       #step_1.open
+        .multyform__title На какое мероприятие вам 
+          span.multyform__title--big Необходим букет
+          span.multyform__title--bigger ?
+        .multyform__form-title подбор букета <strong>шаг</strong> 
+          span#multyform-counter.multyform__form-counter 01
+          span /03 
+        ul.multyform__form-list
+          li.multyform__form-item
+           input#step1-1.multyform__form-input(type="radio" name="event" value="8 марта" checked)
+           label.multyform__form-label(for="step1-1") 8 марта
+          li.multyform__form-item
+           input#step1-2.multyform__form-input(type="radio" name="event" value="день рождения")
+           label.multyform__form-label(for="step1-2") день рождения
+          li.multyform__form-item
+           input#step1-3.multyform__form-input(type="radio" name="event" value="свидание")
+           label.multyform__form-label(for="step1-3") свидание
+          li.multyform__form-item
+           input#step1-4.multyform__form-input(type="radio" name="event" value="любовнице")
+           label.multyform__form-label(for="step1-4") любовнице
+       #step_2
+        .multyform__title Какие есть предпочтения 
+          span.multyform__title--big По подбору букета
+          span.multyform__title--bigger ?
+        .multyform__form-title подбор букета <strong>шаг</strong> 
+          span#multyform-counter.multyform-form__counter 02
+          span /03 
+        ul.multyform__form-list
+          li.multyform__form-item
+           input#step2-1.multyform__form-input(type="radio" name="flower" value="Розы" checked)
+           label.multyform__form-label(for="step2-1") Розы
+          li.multyform__form-item
+           input#step2-2.multyform__form-input(type="radio" name="flower" value="Композиция")
+           label.multyform__form-label(for="step2-2") Композиция
+          li.multyform__form-item
+           input#step2-3.multyform__form-input(type="radio" name="flower" value="Тюльпаны")
+           label.multyform__form-label(for="step2-3") тюльпаны
+          li.multyform__form-item
+           input#step2-4.multyform__form-input(type="radio" name="flower" value="другое")
+           label.multyform__form-label(for="step2-4") другое
+       #step_3
+        .multyform__title Мы уже подбираем  
+          span.multyform__title--big варианты
+        .multyform__form-title подбор букета <strong>шаг</strong> 
+          span#multyform-counter.multyform-form__counter 03
+          span /03 
+        .multyform__form-title.multyform__form-title--result В течение 10 минут пришлем 5 фотографий букетов по вашим параметрам, с точной стоимостью
+          span.multyform__form-title-span Куда отправить?
+        .multyform-form__buttons 
+          .multyform-form__nav
+             a#multyform-viber(href="#").multyform__form-link.multyform__form-link--viber 
+              svg(class="multyform__form-svg-viber")
+               use(xlink:href="img/sprite.svg#viber") 
+              span Отправить в вибер
+             input#viber-input(type="tel" name="viber" placeholder="+7 901 475-55-74").hidden 
+          .multyform-form__nav
+             a#multyform-tel(href="#").multyform__form-link.multyform__form-link--coll 
+              svg(class="multyform__form-svg-coll")
+               use(xlink:href="img/sprite.svg#coll") 
+              span Сообщить по телефону
+             input#tel-input(type="tel" name="phone"  placeholder="+7 901 475-55-74").hidden
+       .multyform-form__buttons   
+        .multyform-form__nav
+          a(href="#")#prev-btn.multyform__form-link.multyform__form-link--back.hidden 
+            svg(class="multyform__form-svg multyform__form-svg--back")
+              use(xlink:href="img/sprite.svg#arrow_btn") 
+            span Назад
+        .multyform-form__nav
+          a(href="#")#next-btn.multyform__form-link.multyform__form-link--next
+            span Вперед 
+            svg(class="multyform__form-svg")
+               use(xlink:href="img/sprite.svg#arrow_btn")
+          input(type="hidden" name="formData" value="Сообщение с сайта Цветы")#formData     
+          button#multyform__submit(type="submit" value="отправить").hidden.multyform__submit Отправить
+           svg(class="multyform-form__svg")
+               use(xlink:href="img/sprite.svg#arrow_btn")      
+         
+          
+
+       
+      block
