@@ -27,7 +27,12 @@ let config = {
     './script.js',
   ],
   'addAssets': {
-    'src/fonts/demo-empty-open-sans.woff2': 'fonts/',
+    'src/fonts/abel.woff': 'fonts/',
+    'src/fonts/YanoneKaffeesatzRegular.woff': 'fonts/',
+    'src/fonts/YanoneKaffeesatzLight.woff': 'fonts/',
+    'src/fonts/YanoneKaffeesatzBold.woff': 'fonts/',
+    'src/fonts/YanoneKaffeesatzMedium.woff': 'fonts/',
+    'src/fonts/Vollkorn.woff': 'fonts/',
     'src/img/demo-*.{png,svg,jpg,jpeg}': 'img/',
     // 'src/favicon/*.{png,ico,svg,xml,webmanifest}': 'img/favicon',
     // 'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',

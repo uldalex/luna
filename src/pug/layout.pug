@@ -14,6 +14,8 @@ html(class='page  no-js', lang='ru')
     meta(name='format-detection', content='address=no')
     meta(name='format-detection', content='email=no')
     meta(content='notranslate', name='google')
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400;600&display=swap" rel="stylesheet">
     //- Фавиконки (https://realfavicongenerator.net)
     //- link(rel='apple-touch-icon', sizes='180x180', href='/img/favicon/apple-touch-icon.png')
     //- link(rel='icon', type='image/png', sizes='32x32', href='/img/favicon/favicon-32x32.png')
@@ -39,19 +41,24 @@ html(class='page  no-js', lang='ru')
     .page__inner
       .page__content
 
-        +page-header()
-          +logo('/')
-            img(src='img/demo-logo.svg', alt='Logo', width='64', height='15')
-          block nav
 
         block content
           p содержимое
-
+        
       .page__footer-wrapper
+        +bottom-block()
+          p 8 918 300 95 32   Lunela.makoi@gmail.com @Lina_makoi_designer
         +page-footer()
           block footer
-            p «Подвал»
-            p Контактный телефон: #[a(href='tel:+70000000000') +7 000 000 00 00]
-
+            .row
+              .row__col-1 (с) 2020 Luna Makoi Projekt ® <br>Все права защищены
+              .row__col-2.footer-center Создание сайта <br> #[a(href='/') indigo market]
+              .row__col-3 
+                ul 
+                  li  #[a(href='/') Обо мне]
+                  li  #[a(href='/') Проекты]
+                  li  #[a(href='/') Новости]
+                  li  #[a(href='/') Услуги]
+                div.footer-right Luna <br> Makoi <br> Project
     block page-bottom
       script(src='js/bundle.js')

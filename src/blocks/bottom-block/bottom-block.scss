@@ -1,0 +1,13 @@
+// В этом файле должны быть стили для БЭМ-блока bottom-block, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.bottom-block {
+
+  $block-name:                &; // #{$block-name}__element
+
+
+  &__inner {
+    @include container();
+  }
+}
