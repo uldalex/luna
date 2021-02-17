@@ -37,36 +37,38 @@ html(class='page  no-js', lang='ru')
   body
     noscript У вас отключен JavaScript. Это пугает.
    
-    .page__inner
-      .page__content.home
+    .home__inner
+      .home__content.home
         .water_wrapper 
           .water
         block content
-          h1 Luna Makoi Project
-          ul.main_menu 
-            li #[a(href='/') обо мне]
-            li #[a(href='/') Проекты]
+          h1.site_title.animate__animated.animate__pulse Luna Makoi Project
+          ul.main_menu.animate__animated.animate__bounceInLeft.animate__delay-8s 
+            li #[a(href='about.html') обо мне]
+            li #[a(href='project.html') Проекты]
             li #[a(href='/') Новости]
             li #[a(href='/') Услуги]
         +bottom-block()
           ul.sotial 
             li 
-              a.insta(href='/')
+              a.sotial.insta(href='/')
                 svg(class="sotial" width="23px" height="23px")
                   use(xlink:href="img/sprite.svg#insta") 
             li 
-              a.fb(href='/')
+              a.sotial.fb(href='/')
                 svg(class="sotial" width="22px" height="23px")
                   use(xlink:href="img/sprite.svg#fb") 
             li 
-              a.twitter(href='/')
+              a.sotial.twitter(href='/')
                 svg(class="sotial" width="22px" height="23px")
                   use(xlink:href="img/sprite.svg#twitter") 
           p #[a(href='tel:+79183009532') 8 918 300 95 32]
           p #[a(href='mailto:Lunela.makoi@gmail.com') Lunela.makoi@gmail.com] 
           p #[a(href='mailto:Lunela.makoi@gmail.com') @Lina_makoi_designer]    
-          .wave_wrapper 
-              svg(class="wave" width="100px" height="43px")
+          #wave_wrapper.wave_wrapper 
+              audio#audio(autoplay loop)
+                source(src="img/sound/summer.mp3" type="audio/mpeg")
+              svg(class="wave played" width="100px" height="43px")
                 use(xlink:href="img/sprite.svg#wave") 
       .page__footer-wrapper
         +page-footer()
@@ -75,8 +77,8 @@ html(class='page  no-js', lang='ru')
               .row__col-1 (с) 2020 Luna Makoi Projekt ® <br>Все права защищены
               .row__col-2.footer-center Создание сайта <br> #[a(href='/') indigo market]
               .row__col-3 
-                ul 
-                  li  #[a(href='/') Обо мне]
+                ul  
+                  li  #[a(href='about.html') Обо мне]
                   li  #[a(href='/') Проекты]
                   li  #[a(href='/') Новости]
                   li  #[a(href='/') Услуги]

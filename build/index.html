@@ -30,35 +30,36 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');
 </head>
 
 <body><noscript>У вас отключен JavaScript. Это пугает.</noscript>
-  <div class="page__inner">
-    <div class="page__content home">
+  <div class="home__inner">
+    <div class="home__content home">
       <div class="water_wrapper">
         <div class="water"></div>
       </div>
-      <h1>Luna Makoi Project</h1>
-      <ul class="main_menu">
-        <li><a href="/">обо мне</a></li>
-        <li><a href="/">Проекты</a></li>
+      <h1 class="site_title animate__animated animate__pulse">Luna Makoi Project</h1>
+      <ul class="main_menu animate__animated animate__bounceInLeft animate__delay-8s">
+        <li><a href="about.html">обо мне</a></li>
+        <li><a href="project.html">Проекты</a></li>
         <li><a href="/">Новости</a></li>
         <li><a href="/">Услуги</a></li>
       </ul>
       <div class="bottom-block">
         <div class="bottom-block__inner">
           <ul class="sotial">
-            <li> <a class="insta" href="/"><svg class="sotial" width="23px" height="23px">
+            <li> <a class="sotial insta" href="/"><svg class="sotial" width="23px" height="23px">
                   <use xlink:href="img/sprite.svg#insta"> </use>
                 </svg></a></li>
-            <li> <a class="fb" href="/"><svg class="sotial" width="22px" height="23px">
+            <li> <a class="sotial fb" href="/"><svg class="sotial" width="22px" height="23px">
                   <use xlink:href="img/sprite.svg#fb"> </use>
                 </svg></a></li>
-            <li> <a class="twitter" href="/"><svg class="sotial" width="22px" height="23px">
+            <li> <a class="sotial twitter" href="/"><svg class="sotial" width="22px" height="23px">
                   <use xlink:href="img/sprite.svg#twitter"> </use>
                 </svg></a></li>
           </ul>
           <p><a href="tel:+79183009532">8 918 300 95 32</a></p>
           <p><a href="mailto:Lunela.makoi@gmail.com">Lunela.makoi@gmail.com</a> </p>
           <p><a href="mailto:Lunela.makoi@gmail.com">@Lina_makoi_designer</a> </p>
-          <div class="wave_wrapper"> <svg class="wave" width="100px" height="43px">
+          <div class="wave_wrapper" id="wave_wrapper"> <audio id="audio" autoplay loop>
+              <source src="img/sound/summer.mp3" type="audio/mpeg"></audio><svg class="wave played" width="100px" height="43px">
               <use xlink:href="img/sprite.svg#wave"> </use>
             </svg></div>
         </div>
@@ -72,7 +73,7 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');
             <div class="row__col-2 footer-center">Создание сайта <br> <a href="/">indigo market</a></div>
             <div class="row__col-3">
               <ul>
-                <li> <a href="/">Обо мне</a></li>
+                <li> <a href="about.html">Обо мне</a></li>
                 <li> <a href="/">Проекты</a></li>
                 <li> <a href="/">Новости</a></li>
                 <li> <a href="/">Услуги</a></li>

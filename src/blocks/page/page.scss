@@ -63,8 +63,17 @@
   font-style: normal;
  font-display: swap;
 }
+@font-face {
+  font-family: 'SS';
+ src:  url('../fonts/ss.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+ font-display: swap;
+}
 
-
+html, body {
+  overflow-x: hidden;
+}
 
 .page {
   box-sizing: border-box;
@@ -377,7 +386,34 @@ pre {
     background: transparent;
   }
 }
+.site_title{
+  font-size: 18px;
+  color: #838383;
+  margin: 0 auto;
+  text-align: center;
+  font-weight:400;
+  margin-top: 77px;
+  text-transform: uppercase;
+  font-family: 'Vollkorn';
+ 
+  letter-spacing: 1.5px;
+  position: relative;
+  z-index: 2;
 
+  & a{
+    color: #838383;
+    text-decoration: none;
+
+    &:hover {
+      color: #bbbbbb;
+    }
+  }
+}
+.animate__delay-8s{
+  animation-delay: 8s;
+  animation-duration: 2s;
+}
+//footer
 .page-footer {
   background-color: #F8F8F6;
   min-height:153px;
@@ -423,6 +459,10 @@ pre {
   & a {
     color: #838383;
     text-decoration: none;
+
+    &:hover {
+      color:#000;
+    }
   }
   & .footer-center {
     color: #bbbbbb;
@@ -467,6 +507,7 @@ pre {
     }
   }
 } 
+//bottom block
 .bottom-block {
   padding-bottom:50px;
   position:relative;
@@ -489,6 +530,24 @@ pre {
       & a.fb{
         padding-left: 5px;
       }
+    }
+  }
+  & p{
+    line-height:16,71px;
+    font-family: 'SFRegular';
+    color: #838383;
+    margin-top:0;
+    margin-bottom:0;
+  }
+  & a {
+    font-size: 14px;
+    color: #838383;
+    font-family: 'SFRegular';
+    text-decoration: none;
+    transition: all 0.3s linear;
+    
+    &:hover {
+      color:#000;
     }
   }
   @media screen and (max-width: 1024px) and (max-height: 600px) { 
@@ -522,8 +581,16 @@ pre {
   }
 
 }
-svg.sotial {
-fill: #d0d0d0;
+
+a.sotial{
+  transition: all 0.3s linear;
+  & svg{
+    fill: #d0d0d0;
+  }
+  &:hover svg {
+    fill:#000000;
+    transition: all 0.3s linear;
+  }
 }
 .water_wrapper {
   width:100vw;
@@ -533,9 +600,10 @@ fill: #d0d0d0;
 
 }
 .water{
-background: url(../img/fish.png);
+background: url(../img/fish.svg);
 background-position: center center;
 background-repeat: no-repeat;
+background-size:50% 100% ;
 position:absolute;
 opacity:0.3;
 top:0;
@@ -565,7 +633,11 @@ svg.wave {
     position: relative;
     left: -10px;
     width: 200px;
+    
+
+    &.played {
     animation: wave 5s linear infinite;
+    }
 }
 @keyframes wave {
   0% { 
@@ -575,6 +647,7 @@ svg.wave {
     left: 0; 
   }
 }
+// home page
 .home {
   display: flex;
   flex-direction: column;
@@ -582,37 +655,10 @@ svg.wave {
   align-items: center;
   justify-content: space-between;
   position:relative;
+  min-height:100vh;
 
 
 
-  & h1{
-    font-size: 18px;
-    color: #838383;
-    margin: 0 auto;
-    text-align: center;
-    font-weight:400;
-    margin-top: 77px;
-    text-transform: uppercase;
-    font-family: 'Vollkorn';
-    text-decoration: none;
-    letter-spacing: 1.5px;
-    position: relative;
-    z-index: 2;
-  }
- 
-  & p{
-    line-height:16,71px;
-    font-family: 'SFRegular';
-    color: #838383;
-    margin-top:0;
-    margin-bottom:0;
-  }
-  & a {
-    font-size: 14px;
-    color: #838383;
-    font-family: 'SFRegular';
-    text-decoration: none;
-  }
   & .main_menu {
     display: flex;
     margin: 0 auto;
@@ -633,6 +679,10 @@ svg.wave {
         letter-spacing: 2px;
         text-decoration: none;
         color:#000000;
+
+        &:hover {
+          color: #838383;
+        }
       }
     }
   }
@@ -642,7 +692,7 @@ svg.wave {
     }
   }
   @media (max-width: 600px) { 
-    min-height:75vh;
+    min-height:100vh;
     align-items: flex-start;
     & h1 {
       margin-top: 47px;
@@ -669,3 +719,182 @@ svg.wave {
     }
   }
 }
+.page {
+ 
+  &__inner {
+    @include container();
+    position: relative;
+  }
+
+  &__content {
+    padding:0 60px;
+  }
+
+  & .separator_left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height:100%;
+    overflow: hidden;
+   
+
+    &__wrapper {
+      display: block;
+    position: relative;
+    height: 60%; 
+    animation-duration: 5s;
+
+    & h3{
+     transform-origin: 0 0;
+     transform: rotate(-90deg);
+    margin-top: 120%;
+    color: #D4D4D4;
+    font-family: 'VOLLKORN';
+    font-weight: 400;
+
+     & a {
+      color: #D4D4D4;
+      text-decoration: none;
+
+     }
+    }
+  }
+
+  &__border {
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+    margin-left: 12px;
+  }
+ }
+ & .separator_right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: -196px;
+  height:100%;
+  overflow: hidden;
+ 
+
+  &__wrapper {
+    display: block;
+  position: relative;
+  height: 60%;
+  animation-duration: 7s;
+
+  & h3{
+   transform-origin: 80px 80px;
+   transform: rotate(-90deg);
+  margin-top: 120%;
+  color: #D4D4D4;
+  font-family: 'VOLLKORN';
+  font-weight: 400;
+  font-size:36px;
+
+   & a {
+    color: #D4D4D4;
+    text-decoration: none;
+
+   }
+  }
+}
+
+&__border {
+  width: 1px;
+  height: 100%;
+  background-color: #000;
+  margin-left: 12px;
+}
+}
+}
+.about{
+  & .row {
+    // Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
+    @include row($grid-gutter-width, 10px, 12px, 16px, 40px, 80px);
+    height:100%;
+    
+    &__col-1{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 4, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 4, $grid-columns, 40px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 4, $grid-columns, 60px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+    }
+    &__col-2{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 4, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 4, $grid-columns, 40px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 4, $grid-columns, 60px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+    }
+    &__col-3{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 4, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 4, $grid-columns, 40px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 4, $grid-columns, 60px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      padding-top:64px;
+      display: flex;
+      flex-direction: column;
+  
+      & .wrapper {
+        flex-grow: 1;
+      }
+     }
+     &__col-4{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 8, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 8, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 8, $grid-columns, 40px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 8, $grid-columns, 60px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+    }
+  }
+
+  & .site_title {
+    margin-bottom:40px;
+  }
+
+  & h3 {
+    font-family: 'Abel';
+    text-transform: uppercase;
+    font-size: 35px;
+    letter-spacing: 3px;
+    margin-top:0;
+    line-height: 100%;
+    margin-bottom: 30px;
+
+    &.alt {
+      font-family: 'Vollkorn';
+      font-size:18px;
+      margin-bottom: 1rem;
+      line-height: 200%;
+    }
+  }
+  
+  & p {
+    font-family: 'ss';
+    text-align: justify;
+
+    &.que {
+      font-weight: 600;
+      text-align: left;
+    }
+
+    &:last-child{
+      margin-bottom:4rem;
+    }
+  }
+  & .vertical_separator{
+    height:1px;
+    width:80%;
+    margin:0 auto;
+    background-color: #000;
+
+  }
+
+}
+

@@ -15,8 +15,9 @@ let config = {
   'addStyleBefore': [
     'src/scss/variables.scss',
     'src/scss/mixins.scss',
-    'src/scss/base.scss'
-    
+    'src/scss/base.scss',
+    'src/scss/animate.scss'
+     
     // 'somePackage/dist/somePackage.css', // для 'node_modules/somePackage/dist/somePackage.css',
   ],
   'addStyleAfter': [
@@ -36,7 +37,9 @@ let config = {
     'src/fonts/YanoneKaffeesatzMedium.woff': 'fonts/',
     'src/fonts/Vollkorn.woff': 'fonts/',
     'src/fonts/SFRegular.woff': 'fonts/',
+    'src/fonts/ss.woff': 'fonts/',
     "./src/img/*.{png,svg,jpg,jpeg}": "img/",
+    "./src/img/sound/*.{mp3}": "img/sound",
      'node_modules/somePackage/images/*.{png,svg,jpg,jpeg}': 'img/',
   },
   'dir': {

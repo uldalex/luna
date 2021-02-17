@@ -1,0 +1,113 @@
+//- Стандартный шаблон страницы
+
+include mixins.pug
+
+doctype html
+html(class='page  no-js', lang='ru')
+
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //- Edge и ряд мобильных браузеров слишком умны. Отключим это.
+    meta(name='format-detection', content='telephone=no')
+    meta(name='format-detection', content='date=no')
+    meta(name='format-detection', content='address=no')
+    meta(name='format-detection', content='email=no')
+    meta(content='notranslate', name='google')
+   
+    //- Фавиконки (https://realfavicongenerator.net)
+    //- link(rel='apple-touch-icon', sizes='180x180', href='/img/favicon/apple-touch-icon.png')
+    //- link(rel='icon', type='image/png', sizes='32x32', href='/img/favicon/favicon-32x32.png')
+    //- link(rel='icon', type='image/png', sizes='16x16', href='/img/favicon/favicon-16x16.png')
+    //- link(rel='manifest', href='/img/favicon/site.webmanifest')
+    //- link(rel='mask-icon', href='/img/favicon/safari-pinned-tab.svg', color='#5bbad5')
+    //- meta(name='msapplication-TileColor', content='#5bbad5')
+    //- meta(name='theme-color', content='#000')
+    //- meta(name='msapplication-navbutton-color', content='#000')
+    //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
+
+    block meta
+      title Обо мне
+
+    block head
+      link(rel='stylesheet', href='css/style.css')
+      script
+        include ../js/head-script.js
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+   
+    .page__inner 
+      .separator_left.separator_left--project
+        .separator_left__wrapper.animate__animated.animate__fadeInDownBig 
+            h3 command
+            .separator_left__border
+      .page__content.about
+        block content
+          h1.site_title
+           a(href="/") Luna Makoi Project
+         
+          .row
+              .row__col-1 
+                img(src="img/luna.jpg")
+              .row__col-2
+                h3 интервью с Luna
+                p.que В чем заключается ваша миссия?
+                p Я создаю не просто интерьеры, а комфортные пространства для гармоничной жизни. Подход к работе принципиально отличается от привычного понимания. Для меня важно видеть суть, понимать потребности души, тела и ума. Потом это все складывается в единую формулу и дополняется нюансами.
+                p.que Как вы с заказчиком приходите к взаимопониманию?
+                p Мне нужно сонастроиться с человеком и его полем. Это можно сделать и дистанционно, но в любом случае контакт и доверие – это основа основ. Я не стремлюсь сделать все лишь бы быстрее. Моя философия заключается в том, чтобы создавать пространство, где человек сможет жить комфортно и раскрываться по-новому.
+                p.que В чем ваша мотивация?
+                p Используя свои навыки и опыт, я могу менять жизни людей в лучшую сторону, и я просто делаю это. Это происходит через развитие в области технологий, изучение новых структур и материалов, создание максимально комфортных вариантов – для меня нет границ.
+
+              .row__col-3 
+                div.wrapper
+                    p Учитывается все, что вам нужно. Главная миссия – создать ту атмосферу, в которой человек станет счастливее.
+                    p.que В чем заключается ваш подход?
+                    p Дом – важное место с энергетической точки зрения. Именно он наполняет нас. Важно, чтобы все было спроектировано, продумано с акцентом на эргономику, сенсорику и восприятие – от проекта до уже готового пространства.
+                    p По этому принципу происходит создание архитектурного проекта с нуля. В нем я с учетом ваших желаний реализую атмосферу пространства до мельчайших деталей – все они будут соответствовать выбранному вами стилю. Возможно, образ завершит фоновая музыка из встроенной аудиосистемы и ароматы подчеркивающие атмосферу. Образы стихий, затрагивание всех органов чувств и нейронных связей – все это позволяет достичь удовлетворения. Хороший дизайн может погрузить вас в правильное состояние так, что никто и не поймет, что причина этому – продуманная структура. Вообще я долго могу говорить о философии и идеологии.
+                .vertical_separator.wow.animate__animated.animate__fadeInRightBig 
+              .row__col-4
+                h3.alt Люнела Гронская – основатель и главный дизайнер проекта Luna makoi
+                p Люнега Гронская – основатель и главный дизайнер проекта. Родилась в городе Сочи, окончила высшее учебное заведение по специальности «Дизайн среды». Работает в сфере дизайна с 2008 года. В 2013 году окончила школу флористики в Москве. Сотрудничество с многочисленными архитекторами помогло Люнеле трансформировать и усовершенствовать собственную подачу проектирования и ведения объектов. С 2014 года дизайнер много путешествовала и проживала в разных странах, что во многом стало толчком для создания собственного независимого бренда. Сегодня проект Луна Макои Проджект включает в себя слаженную команду профессионалов и развивается в потоке времени. В своем развитии Люнела уделяет много внимания практикам цигун и восточным боевым искусствам, формирующим силу духа и стойкость психики. Она изучает сознание человека, нейронауку, нейропсихологию, культуру, физику. Все это помогает в работе с людьми и их жилым пространством. Складывая различные аспекты личности и создания, дизайнер может увидеть суть и понять потребности души для создания гармоничного пространства для различных типов клиентов. Итоговый результат – создание того места, в котором человеку хорошо. Использование всех знаний помогает соединить детали в едином полотне, сложенном для каждого конкретного клиента. Если вы готовы доверять, Люнела с радостью начнет работу с вашим пространством. Обсудить детали можно в WhatsApp.
+
+      .separator_right.separator_right--project
+        .separator_right__wrapper.animate__animated.animate__fadeInDownBig 
+            .separator_right__border
+            h3 interview 
+
+    +bottom-block()
+          ul.sotial 
+            li 
+              a.sotial.insta(href='/')
+                svg(class="sotial" width="23px" height="23px")
+                  use(xlink:href="img/sprite.svg#insta") 
+            li 
+              a.sotial.fb(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#fb") 
+            li 
+              a.sotial.twitter(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#twitter") 
+          p #[a(href='tel:+79183009532') 8 918 300 95 32]
+          p #[a(href='mailto:Lunela.makoi@gmail.com') Lunela.makoi@gmail.com] 
+          p #[a(href='mailto:Lunela.makoi@gmail.com') @Lina_makoi_designer]    
+          #wave_wrapper.wave_wrapper 
+              audio#audio(autoplay loop)
+                source(src="img/sound/summer.mp3" type="audio/mpeg")
+              svg(class="wave played" width="100px" height="43px")
+                use(xlink:href="img/sprite.svg#wave") 
+    .page__footer-wrapper
+        +page-footer()
+          block footer
+            .row
+              .row__col-1 (с) 2020 Luna Makoi Projekt ® <br>Все права защищены
+              .row__col-2.footer-center Создание сайта <br> #[a(href='/') indigo market]
+              .row__col-3 
+                ul 
+                  li  #[a(href='/') Обо мне]
+                  li  #[a(href='/') Проекты]
+                  li  #[a(href='/') Новости]
+                  li  #[a(href='/') Услуги]
+                div.footer-right Luna <br> Makoi <br> Project
+    script(src='js/bundle.js')

@@ -6,7 +6,7 @@
 
  const $ = require('jquery'); 
 
- 
+ const WOW =  require('./utils/WOW.js'); 
  
 $(document).ready(function() {
 /**
@@ -913,9 +913,62 @@ $.fn.ripples.noConflict = function() {
 
 })));
 $(function(){
-    $('.water').ripples({
+    $('.home').ripples({
         resolution: 256,
         perturbance: 0.02
     });
 });
+
+
+var audio = $("#audio");
+var audioButton = $(".wave_wrapper");
+function togglePlay() {
+	var myAudio = document.getElementById("audio");
+	return myAudio.paused ? myAudio.play() : myAudio.pause();
+  };
+$(audioButton).on('click', function() {
+ togglePlay();
+ $('svg.wave').toggleClass('played');
+ 
+ });
+
+$(document).ready(function() {
+  var playing = false;
+
+  $('a#button').click(function() {
+      $(this).toggleClass("down");
+
+      if (playing == false) {
+          document.getElementById('player').play();
+          playing = true;
+          $(this).text("stop sound");
+
+      } else {
+        document.getElementById('player').pause();
+        playing = false;
+        $(this).text("restart sound");
+      }
+
+  });
 });
+
+
+  var wow = new WOW(
+	{
+	  boxClass:     'wow',      // animated element css class (default is wow)
+	  animateClass: 'animate__animated', // animation css class (default is animated)
+	  offset:       0,          // distance to the element when triggering the animation (default is 0)
+	  mobile:       true,       // trigger animations on mobile devices (default is true)
+	  live:         true,       // act on asynchronously loaded content (default is true)
+	  callback:     function(box) {
+		// the callback is fired every time an animation is started
+		// the argument that is passed in is the DOM node being animated
+	  },
+	  scrollContainer: null,    // optional scroll container selector, otherwise use window,
+	  resetAnimation: true,     // reset animation on end (default is true)
+	}
+  );
+  wow.init();
+});
+
+ 
