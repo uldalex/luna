@@ -1,7 +1,14 @@
 # Проект LUNA  ![Test Status](https://travis-ci.org/nicothin/NTH-start-project.svg?branch=master) [![devDependencies Status](https://david-dm.org/nicothin/NTH-start-project/dev-status.svg)](https://david-dm.org/nicothin/NTH-start-project?type=dev) [![dependencies Status](https://david-dm.org/nicothin/NTH-start-project/status.svg)](https://david-dm.org/nicothin/NTH-start-project)
 
 Страницы:
-#[Главная](https://uldalex.github.io/luna/build/index.html) 
+#[Главная](https://uldalex.github.io/luna/build/index.html) <br>
+#[Обо мне](https://uldalex.github.io/luna/build/about.html) <br>
+#[Проекты](https://uldalex.github.io/luna/build/project.html) <br> 
+#[Новости](https://uldalex.github.io/luna/build/news.html) <br>
+#[Концепция для инвесторов](https://uldalex.github.io/luna/build/consept.html) <br>
+#[Услуги](https://uldalex.github.io/luna/build/servise.html)  <br>
+
+
 ## Парадигма
 
 - Именование классов по БЭМ, разметка в [pug](https://pugjs.org/), стилизация [Sass](http://sass-lang.com/). 
