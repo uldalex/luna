@@ -27,7 +27,7 @@ html(class='page  no-js', lang='ru')
     //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
 
     block meta
-      title Проекты
+      title Обо мне
 
     block head
       link(rel='stylesheet', href='css/style.css')
@@ -38,42 +38,45 @@ html(class='page  no-js', lang='ru')
     noscript У вас отключен JavaScript. Это пугает.
    
     .page__inner 
-      .separator_left.separator_left--project
+      .separator_left.separator_left--servise
         .separator_left__wrapper.animate__animated.animate__fadeInDownBig 
-            h3 command
-            .separator_left__border
-      .page__content.project
+            h3 presentation
+            .separator_left__border.separator_left__border--servise-one
+            .separator_left__border.separator_left__border--servise-two
+      .page__content.work
         block content
-          h1.site_title
-           a(href="index.html") Luna Makoi Project
-         
-          .row
-              .row__col-1.row__el.animate__animated.animate__fadeInTopLeft 
-                .project__title.mr-20 концепции для инвесторов
-                img(src="img/p1.jpg")
-                
-              .row__col-2.row__el.animate__animated.animate__fadeInTopRight
-                img(src="img/p2.jpg")
-                .project__title.ml-40 проекты в картинках
-               
-              .row__col-3.row__el.animate__animated.animate__fadeInBottomLeft 
-                .project__title.rotate этапы проектирования
-                img(src="img/p3.jpg")
-               
-              .row__col-4.row__el.animate__animated.animate__fadeInBottomRight
-                 img(src="img/p2.jpg")
-                 .project__title.ml-40 пример готового проекта
-               
+            h1.site_title
+                a(href="index.html") Luna Makoi Project
+            h2.page_title.animate__animated.animate__backInDown Порядок работы и этапы проектирования
+            .servise__title.text-center Этапы дизайн-проекта:
+            ol 
+                li Согласование задания на проектирование на основе анкеты клиента.
+                li Замеры и фотофиксация объекта.
+                li Создание обмерного чертежа.
+                li Разработка планировочного решения.
+                li Создание черновой 3D-визуализации.
+                li Создание чистовой 3D-визуализации.
+                li Разработка рабочего альбома чертежей.
+            p Встреча. Определяем ваши потребности и пожелания, обсуждаем стиль, задачи, уровень и бюджет на проект.
+        
 
-      .separator_right.separator_right--project
+
+
+             
+
+
+
+
+ 
+               
+             
+
+      .separator_right.separator_right--consept
         .separator_right__wrapper.animate__animated.animate__fadeInDownBig 
-            .separator_right__border
-           
-      .separator_bottom 
-        .separator_bottom__wrapper 
-            .separator_bottom__border--one.wow.animate__animated.animate__fadeInRightBig 
-            .separator_bottom__border--two.wow.animate__animated.animate__fadeInLeftBig 
-            h3.wow.animate__animated.animate__fadeInRightBig projects
+            .separator_right__border.separator_right__border--consept-one
+            h3 concepts for investors 
+            .separator_right__border.separator_right__border--consept-two
+
     +bottom-block()
           ul.sotial 
             li 

@@ -1,0 +1,161 @@
+//- Стандартный шаблон страницы
+
+include mixins.pug
+
+doctype html
+html(class='page  no-js', lang='ru')
+
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //- Edge и ряд мобильных браузеров слишком умны. Отключим это.
+    meta(name='format-detection', content='telephone=no')
+    meta(name='format-detection', content='date=no')
+    meta(name='format-detection', content='address=no')
+    meta(name='format-detection', content='email=no')
+    meta(content='notranslate', name='google')
+   
+    //- Фавиконки (https://realfavicongenerator.net)
+    //- link(rel='apple-touch-icon', sizes='180x180', href='/img/favicon/apple-touch-icon.png')
+    //- link(rel='icon', type='image/png', sizes='32x32', href='/img/favicon/favicon-32x32.png')
+    //- link(rel='icon', type='image/png', sizes='16x16', href='/img/favicon/favicon-16x16.png')
+    //- link(rel='manifest', href='/img/favicon/site.webmanifest')
+    //- link(rel='mask-icon', href='/img/favicon/safari-pinned-tab.svg', color='#5bbad5')
+    //- meta(name='msapplication-TileColor', content='#5bbad5')
+    //- meta(name='theme-color', content='#000')
+    //- meta(name='msapplication-navbutton-color', content='#000')
+    //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
+
+    block meta
+      title концепции для инвесторов
+
+    block head
+      link(rel='stylesheet', href='css/style.css')
+      script
+        include ../js/head-script.js
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+   
+    .page__inner 
+      .separator_left.separator_left--servise
+        .separator_left__wrapper.animate__animated.animate__fadeInDownBig 
+            h3 presentation
+            .separator_left__border.separator_left__border--servise-one
+            .separator_left__border.separator_left__border--servise-two
+      .page__content.consept
+        block content
+          h1.site_title
+           a(href="index.html") Luna Makoi Project
+           h2.page_title.animate__animated.animate__backInDown концепции для инвесторов
+          .grid
+            .img.img-1.wow.animate__animated.animate__pulse
+              img(src="img/c1.jpg" )
+            .content 
+              div 
+                .servise__title Проект модуль - дом Human Future Comfort 39.5 кв м
+                p От задумки до полной визуализации концептуального проекта 
+                p Строительство поселков из модульных домов становятся все более актуальным. Мой опыт работы с застройщиками позволил мне понять, какого формата ждет большинство из них и учесть все их потребности.
+                p В этой концепции футуризм и минимализм гармонично соединяются между собой и сливаются с природой. Название для дома-капсулы –  Human Future Comfort. Постоянно отслеживая технологические новинки, я вижу тенденцию движения к систематизации, комфорту, автономности, и вместе с этим к простоте. Если вы хотите выйти на новый, другой уровень жизни, это инновационное решение для вас.
+                
+              .content__grid
+                div 
+                  .separator
+                  .img.img-2 
+                    img(src="img/c2.jpg").wow.animate__animated.animate__backInUp
+                .img.img-3 
+                  img(src="img/c3.jpg").wow.animate__animated.animate__backInUp
+          .content.content__float.mt-40
+              .img.img-4 
+                img(src="img/c4.jpg").wow.animate__animated.animate__fadeInLeftBig
+              .text.wow.animate__animated.animate__fadeInRightBig
+                p В проекте используется система «Умный дом». Технолог подбирает лучшие варианты в рамках вашего бюджета и продумывает идеальную комплектацию. «Умный дом» - это то, что сделает вашу жизнь комфортнее и качественнее.
+                p Human Future Comfort – это 39,5 кв.м площади с грамотной планировкой и максимум комфорта. Проект рассчитан на 1-2, максимум на 3 человека. Он отлично подойдет в качестве модуля для кемпинг-парка – вы в любой момент можете приехать сюда отдохнуть и зарядиться энергией.
+                p Из технических новшеств предусмотрены солнечные батареи, что отлично подходит для Сочи. Такой подход хорош и с точки зрения экологии, и с точки зрения экономии. Одна из функций проекта – минимизация ваших затрат. Он не требует фундамента, свай и серьезных вложений в монолит. Минимализм манит своей простотой, легкостью и функциональностью. А экспансивное остекление стирает границы между человеком и окружающей средой, сохраняя чувство защищенности.
+                p Продуманная до мелочей отделка предполагает использование простых, но качественных материалов. Они никогда не выйдут из моды. А мягкое вечернее освежение подарит вам уют. Можно использовать такое новшество, как умное стекло. Оно позволяет уменьшить теплопотери и сократить расходы на электроэнергию. А еще его можно использовать как альтернативу шторам и жалюзи.
+                a.btn(href="/") Подробнее  
+          .grid.mt-70
+            .img.img-5.wow.animate__animated.animate__fadeInLeftBig
+              img(src="img/c5.jpg")
+            div.grid__item--end
+              .img.img-6.wow.animate__animated.animate__fadeInRightBig 
+                img(src="img/c6.jpg")
+              .img.img-7.mt-40.wow.animate__animated.animate__fadeInRightBig
+                img(src="img/c7.jpg")
+          .grid.mt-40
+            div
+              .img.img-8.wow.animate__animated.animate__fadeInLeftBig 
+                img(src="img/c8.jpg")
+              .img.img-9.wow.animate__animated.animate__fadeInLeftBig 
+                img(src="img/c9.jpg")
+            .img.img-10.wow.animate__animated.animate__fadeInRightBig
+                img(src="img/c10.jpg")
+          .grid-3.mt-40
+            span
+            .img.img-11.wow.animate__animated.animate__fadeInBottomLeft
+              img(src="img/c11.jpg")
+            .img.img-12.grid__item--end.wow.animate__animated.animate__fadeInBottomRight 
+              img(src="img/c12.jpg")
+          .grid-3.mt-40
+            .img.img-13.wow.animate__animated.animate__fadeInRightBig
+              img(src="img/c13.jpg")
+            div.grid__item--end 
+              .img.img-14.mr-40.wow.animate__animated.animate__fadeInDownBig 
+                img(src="img/c14.jpg")
+              .img.img-15.mt-40.mr-40.wow.animate__animated.animate__fadeInBottomRight
+                img(src="img/c15.jpg") 
+            .img.img-16.wow.animate__animated.animate__fadeInRightBig 
+              img(src="img/c16.jpg")  
+
+
+             
+
+
+
+
+ 
+               
+             
+
+      .separator_right.separator_right--consept
+        .separator_right__wrapper.animate__animated.animate__fadeInDownBig 
+            .separator_right__border.separator_right__border--consept-one
+            h3 concepts for investors 
+            .separator_right__border.separator_right__border--consept-two
+
+    +bottom-block()
+          ul.sotial 
+            li 
+              a.sotial.insta(href='/')
+                svg(class="sotial" width="23px" height="23px")
+                  use(xlink:href="img/sprite.svg#insta") 
+            li 
+              a.sotial.fb(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#fb") 
+            li 
+              a.sotial.twitter(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#twitter") 
+          p #[a(href='tel:+79183009532') 8 918 300 95 32]
+          p #[a(href='mailto:Lunela.makoi@gmail.com') Lunela.makoi@gmail.com] 
+          p #[a(href='mailto:Lunela.makoi@gmail.com') @Lina_makoi_designer]    
+          #wave_wrapper.wave_wrapper 
+              audio#audio(autoplay loop)
+                source(src="img/sound/summer.mp3" type="audio/mpeg")
+              svg(class="wave played" width="100px" height="43px")
+                use(xlink:href="img/sprite.svg#wave") 
+    .page__footer-wrapper
+        +page-footer()
+          block footer
+            .row
+              .row__col-1 (с) 2020 Luna Makoi Projekt ® <br>Все права защищены
+              .row__col-2.footer-center Создание сайта <br> #[a(href='/') indigo market]
+              .row__col-3 
+                ul 
+                  li  #[a(href='about.html') Обо мне]
+                  li  #[a(href='project.html') Проекты]
+                  li  #[a(href='news.html') Новости]
+                  li  #[a(href='servise.html') Услуги]
+                div.footer-right Luna <br> Makoi <br> Project
+    script(src='js/bundle.js')

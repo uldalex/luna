@@ -433,7 +433,7 @@ pre {
   &__col-1{
     @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
     @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
-    @include col(md, 3, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+    @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
     @include col(lg, 3, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
     @include col(xl, 3, $grid-columns, 20px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
     @include col(xxl, 3, $grid-columns, 26px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
@@ -441,7 +441,7 @@ pre {
   &__col-2{
     @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
     @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
-    @include col(md, 6, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+    @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
     @include col(lg, 6, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
     @include col(xl, 6, $grid-columns, 20px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
     @include col(xxl, 6, $grid-columns, 26px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
@@ -449,7 +449,7 @@ pre {
   &__col-3{
     @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
     @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
-    @include col(md, 3, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+    @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
     @include col(lg, 3, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
     @include col(xl, 3, $grid-columns, 20px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
     @include col(xxl, 3, $grid-columns, 26px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
@@ -603,7 +603,7 @@ a.sotial{
 background: url(../img/fish.svg);
 background-position: center center;
 background-repeat: no-repeat;
-background-size:50% 100% ;
+background-size:450px;
 position:absolute;
 opacity:0.3;
 top:0;
@@ -686,11 +686,17 @@ svg.wave {
       }
     }
   }
+  @media (max-width: 1024px) { 
+    .water{
+      background-size: 320px;
+    }
+    }
   @media screen and (max-width: 1024px) and (max-height: 600px) { 
     & h1 {
       margin-top: 10px;
     }
   }
+  
   @media (max-width: 600px) { 
     min-height:100vh;
     align-items: flex-start;
@@ -729,6 +735,9 @@ svg.wave {
   &__content {
     padding:0 60px;
   }
+  & .mb-0 {
+    margin-bottom:0;
+  }
 
   & .separator_left {
     position: absolute;
@@ -744,28 +753,63 @@ svg.wave {
     height: 60%; 
     animation-duration: 5s;
 
-    & h3{
-     transform-origin: 0 0;
-     transform: rotate(-90deg);
-    margin-top: 120%;
-    color: #D4D4D4;
-    font-family: 'VOLLKORN';
-    font-weight: 400;
-
-     & a {
+      & h3{
+      transform-origin: 0 0;
+      transform: rotate(-90deg);
+      margin-top: 120%;
       color: #D4D4D4;
-      text-decoration: none;
+      font-family: 'VOLLKORN';
+      font-weight: 400;
 
-     }
+      & a {
+        color: #D4D4D4;
+        text-decoration: none;
+
+      }
+      }
+   
     }
-  }
 
-  &__border {
-    width: 1px;
-    height: 100%;
-    background-color: #000;
-    margin-left: 12px;
+    &__border {
+      width: 1px;
+      height: 100%;
+      background-color: #000;
+      margin-left: 12px;
+    }
+    &__border--news {
+      margin-left: 18px;
+    }
+    &__border--servise-one {
+      height: 57%;
+    }
+    &__border--servise-two {
+      height: 50%;
+      margin-top:150%;
+    }
+
+    &--news {
+
+      & h3 {
+        font-size: 36px;
+      }
+    
   }
+    &--servise {
+    
+      & h3 {
+        font-size: 18px;
+        letter-spacing: 2px;
+      }
+    }
+    @media screen and (max-width: 769px) {
+      &--news {
+        left:0;
+        & h3 {
+          font-size: 26px;
+        }
+      
+    }
+    }
  }
  & .separator_right {
   position: absolute;
@@ -775,37 +819,164 @@ svg.wave {
   height:100%;
   overflow: hidden;
  
-
   &__wrapper {
     display: block;
   position: relative;
   height: 60%;
   animation-duration: 7s;
 
-  & h3{
-   transform-origin: 80px 80px;
-   transform: rotate(-90deg);
-  margin-top: 120%;
-  color: #D4D4D4;
-  font-family: 'VOLLKORN';
-  font-weight: 400;
-  font-size:36px;
-
-   & a {
+    & h3 {
+    transform-origin: 80px 80px;
+    transform: rotate(-90deg);
+    margin-top: 120%;
     color: #D4D4D4;
-    text-decoration: none;
+    font-family: 'VOLLKORN';
+    font-weight: 400;
+    font-size:36px;
 
-   }
+      & a {
+        color: #D4D4D4;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__border {
+    width: 1px;
+    height: 100%;
+    background-color: #000;
+    margin-left: 12px;
+  }
+  &__border--news {
+    height: 50%;
+  }
+  @media screen and (max-width: 769px) {
+  &__border--news {
+    margin-left: 20px;
   }
 }
 
-&__border {
-  width: 1px;
-  height: 100%;
-  background-color: #000;
-  margin-left: 12px;
+  &--project {
+    right:0;  
+  }
+  &--consept {
+    right:-470px; 
+    & h3 {
+      color: #D4D4D4;
+      font-size:36px;
+      margin-top: 80%;
+      letter-spacing: 2px;
+    }
+    & .separator_right__border--consept-one {
+      height:30%;
+      margin-left:18px;
+    }
+    & .separator_right__border--consept-two {
+      margin-top: 35%;
+      height:30%;
+      margin-left:18px;
+    } 
+  }
+  &--servise {
+    height:100%;
+    right: -200px;
+    
+    & h3 {
+      color:#000;
+      font-size:18px;
+      margin-top: 60%;
+      letter-spacing: 2px;
+    }
+    & .separator_right__border--servise-one {
+      height:50%;
+    }
+    & .separator_right__border--servise-two {
+      margin-top: 80%;
+      height:30%;
+    }
+  }
+
+  @media screen and (max-width: 769px) {
+    right: -155px;
+
+    &--project {
+      right: 25px;
+    }
+    &--servise {
+      right: -200px;
+    }
+    &--consept {
+      right: -435px;
+    }
+    
+  }
+  @media screen and (max-width: 480px) {
+    &--consept {
+      right: -455px;
+    }
+  }
 }
-}
+  .separator_bottom{
+    position: relative;
+    
+    &__wrapper {
+      display: block;
+    position: relative;
+    height: 60%;
+    animation-duration: 7s;
+
+      & h3 {
+      color: #D4D4D4;
+      font-family: 'VOLLKORN';
+      font-weight: 400;
+      font-size:36px;
+      text-align: right;
+      animation-duration: 3s;
+
+        & a {
+          color: #D4D4D4;
+          text-decoration: none;
+
+        }
+      }
+    }
+    &__border--one {
+      width: 500px;
+      height: 0.5px;
+      background-color: #000;
+      margin-left: 12px;
+      position: absolute;
+      top:18px;
+      left:50px;
+      animation-duration: 3s;
+    }
+    &__border--two {
+      width: 350px;
+      height: 0.5px;
+      background-color: #000;
+      margin-left: 12px;
+      position: absolute;
+      top:18px;
+      left:-400px;
+      animation-duration: 3s;
+    }
+    @media screen and (max-width: 600px) {
+      &__border--one {
+        top: 30px;
+        left: -300px;
+      }
+    }
+    @media screen and (max-width: 320px) {
+      &__border--one {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    &__content {
+      padding: 0 30px;
+    }
+  }
 }
 .about{
   & .row {
@@ -895,6 +1066,637 @@ svg.wave {
     background-color: #000;
 
   }
+  @media screen and (max-width: 600px) {
+    .row__col-3 {
+      padding-top:0px;
+    }
+    h3 {
+      margin-top:20px;
+      text-align: center;
+      font-size:25px;
+
+      &.alt {
+        line-height: 150%;
+      }
+    }
+  }
+}
+
+//project
+.project {
+  & .row {
+    // Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
+    @include row($grid-gutter-width, 10px, 12px, 16px, 40px, 80px);
+    height:100%;
+    
+    &__col-1{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 12, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 6, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 6, $grid-columns, 40px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 6, $grid-columns, 60px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      
+    }
+    &__col-2{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 12, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 6, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 6, $grid-columns, 40px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 6, $grid-columns, 60px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+    }
+    &__col-3{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 12, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 6, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 6, $grid-columns, 40px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 6, $grid-columns, 60px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+     }
+     &__col-4{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 12, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 6, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 6, $grid-columns, 40px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 6, $grid-columns, 60px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+    }
+    &__el {
+      display: flex;
+      margin-bottom:20px;
+      justify-content: space-between;
+    }
+  }
+  & .site_title {
+    margin-bottom:40px;
+  }
+  & img {
+    width:295px;
+    height:295px;
+  }
+  &__title {
+    font-family: 'Vollkorn';
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+
+    &.ml-40{
+      margin-left:40px;
+    }
+    &.mr-20 {
+      margin-right: 20px;
+    }
+
+    &.rotate {
+      transform-origin: 70% 30%;
+      transform: rotate(-90deg);
+      letter-spacing: 1px;;
+    }
+
+  }
+  @media screen and (max-width: 600px) {
+    .row__col-1{
+      flex-direction: column;
+      align-items: center;
+    }
+    .row__col-2{
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .row__col-3{
+      flex-direction: column;
+      align-items: center;
+    }
+    .row__col-4{
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+    .project__title {
+      text-align: center;
+    }
+    .project__title.ml-40 {
+      margin-left: 0px; 
+    }
+    .project__title.rotate {
+      transform-origin: 70% 30%;
+      transform: rotate( 0deg ); 
+      letter-spacing: 0px;
+  }
+  }
+}
+
+//news
+.news {
+
+  & .row {
+    // Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
+    @include row($grid-gutter-width, 10px, 12px, 16px, 40px, 80px);
+    height:100%;
+    overflow: hidden;
+    
+    &__col-1{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 4, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 4, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 4, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px 
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation-duration: 3s;
+    }
+    &__col-2{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 4, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 4, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 4, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      animation-duration: 3s;
+    }
+    &__col-3{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 4, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 4, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 4, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 4, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      animation-duration: 3s;
+     }
+  }
+  & .site_title {
+    margin-bottom:80px;
+  }
+
+  &__img {
+    position: relative;
+    height:580px;
+    max-width: 300px;
+
+    & img {
+      object-fit: cover;
+      height: 100%;
+      }
+  }
+
+  &__rotate {
+    position: absolute;
+    transform-origin: 0% 0%;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+    font-size: 18px;
+
+    &--one {
+    bottom: -25px;
+    right: -85px;
+    }
+
+    &--two {
+      left: -40px;
+      top: 185px;
+    }
+    &--tree {
+      bottom: -27px;
+      right: -85px;
+      }
+    &--four {
+      left: -30px;
+      top: 185px;
+    }
+    @media screen and (max-width: 600px) {
+      &--two {
+        left: -20px;
+        line-height: 27px;
+      }
+      &--four {
+        left: -20px;
+        line-height: 27px;
+      }
+    } 
+  }
+  & .mt-100 {
+    margin-top:200px;
+  }
+  & .mt-200 {
+    margin-top:300px;
+  }
+  & .mb-100 {
+    margin-bottom:130px;
+  }
+  @media screen and (max-width: 600px) {
+    & .mt-100 {
+      margin-top:10px;
+    }
+    & .mt-200 {
+      margin-top:20px;
+    }
+    .news .site_title {
+      margin-bottom: 40px;
+  }
+  }
+}
+a.btn {
+  background: #F8F6DF;
+border: 1px solid #000000;
+box-sizing: border-box;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+font-size: 11px;
+padding: 15px 22px;
+transition: all 0.3s linear;
+
+  &:hover, &:active, &:focus {
+    background: #efeab8;
+    outline: none;
+    box-shadow: none;
+  }
+}
+.servise {
+  & .row {
+    // Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
+    @include row($grid-gutter-width, 10px, 12px, 16px, 40px, 80px);
+    height:100%;
+    overflow: hidden;
+    margin-bottom:100px;
+    
+    &__col-1{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(xxl, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation-duration: 3s;
+    }
+  }
+  
+  & .page_title {
+    font-family: 'YanoneKaffeesatzBold';
+    font-size: 36px;
+    text-align: center;
+    margin-bottom:80px;
+    text-transform: uppercase;
+
+  }
+
+  & .servise__title{
+    font-family: 'Vollkorn';
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom:30px;
+    margin-top:30px;
+  }
+  & p {
+    text-align: justify;
+  }
+  & .servise__subtitle {
+    font-family: 'SS';
+    font-weight: 600;
+    margin:15px 0 15px 0;
+  }
+  & .servise__price {
+    margin:30px 0;
+  }
+}
+
+// consept 
+.consept {
+  
+  & .row {
+    // Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
+    @include row($grid-gutter-width, 10px, 12px, 16px, 40px, 80px);
+    height:100%;
+    overflow: hidden;
+    margin-bottom:100px;
+    
+    &__col-1{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 6, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 6, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 6, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 6, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation-duration: 3s;
+    }
+    &__col-2{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 6, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 6, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 6, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 6, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation-duration: 3s;
+    }
+  }
+  & .page_title {
+    font-family: 'YanoneKaffeesatzBold';
+    font-size: 36px;
+    text-align: center;
+    margin-bottom:80px;
+    text-transform: uppercase;
+
+  }
+
+  & .servise__title{
+    font-family: 'Vollkorn';
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom:30px;
+    margin-top:30px;
+  }
+  & p {
+    text-align: justify;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: masonry;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: masonry;
+  }
+  & .grid__item--end{
+    justify-self: self-end;
+  }
+  .content {
+    
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: masonry;
+    }
+
+    &__float {
+      & .img {
+        float:left;
+        margin: 0 80px 20px 0;
+      }
+
+    }
+    
+    & .separator {
+      width:147px;
+      height:1px;
+      background-color: #000;
+      margin:45px 0;
+    }
+  }
+  .img-1 {
+    margin:0 40px 0 0;
+    max-width: 495px;
+    max-height:473px;
+  }
+  .img-2 {
+    max-width:321px;
+    max-height: 205px;
+  }
+  .img-3 {
+  max-width:150px;
+  max-height:143px;
+  justify-self: self-end;
+  }
+  .img-3 {
+    max-width:150px;
+    max-height:143px;
+    }
+  .img-4 {
+    max-width:253px;
+    max-height:269px;
+  }
+  .img-5 {
+    max-width:672px;
+    max-height:496px;
+  }
+  .img-6 {
+    max-width:354px;
+    max-height:272px;
+  }
+  .img-7 {
+    max-width:223px;
+    max-height:188px;
+    float: right;
+  }
+  .img-8 {
+    max-width:259px;
+    max-height:240px;
+    margin-bottom:30px;
+  } 
+  .img-9 {
+    max-width:498px;
+    max-height:317px;
+    margin-right: 40px;
+  } 
+  .img-10 {
+    max-width:524px;
+    max-height:528px;
+  }
+  .img-11 {
+    max-width:266px;
+    max-height:192px;
+  }
+  .img-12 {
+    max-width:162px;
+    max-height:158px;
+    margin-top: -80px;
+  }
+  .img-13 {
+    max-width:318px;
+    max-height:233px;
+  }
+  .img-14 {
+    max-width:246px;
+    max-height:233px;
+  }
+  .img-15 {
+    max-width:160px;
+    max-height:147px;
+    float:right;
+  }
+  .img-16 {
+    max-width:416px;
+    max-height:301px;
+  } 
+  .img {
+    object-fit: cover;
+    transition: all 0.5s linear;
+    overflow: hidden;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+
+    &.scale{
+      position: fixed;
+      max-width:90vw;
+      max-height:98vh;
+      width:98vw;
+      height:90vh;
+      top:0;
+      left: 0;
+      right: 0;
+      margin:0 auto;
+      margin-top:20px;
+      z-index: 5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        opacity: 1;
+      }
+      & img {
+        height: 100%;
+        width: auto;
+      }
+    }
+  }
+  .mt-70 {
+    margin-top:70px;
+  }
+  .mt-40 {
+    margin-top:40px;
+  }
+  .mr-40 {
+    margin-right:40px;
+  }
+  @media screen and (max-width: 769px) {
+    .img {
+      max-width: 100%;
+      max-height:600px;
+      margin-right:0px;
+      margin-top:0px;
+      margin-bottom:40px;
+
+    }
+    .img-1 {
+      margin-top:0px;
+
+    }
+    .content__float{
+       .img {
+      float: left;
+      margin: 0 00px 40px 0; 
+      }
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: masonry;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: masonry;
+    }
+    & .grid__item--end{
+      justify-self: center;
+    }
+    .mr-40 {
+      margin-right:0px;
+    }
+    .mt-70 {
+      margin-top:0px;
+    }
+    .mt-40 {
+      margin-top:0px;
+    }
+    a.btn {
+      margin-bottom:20px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .scale{
+
+      & img {
+        height: auto;
+        width: auto;
+      }
+    }
+    .content__grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: masonry;
+    }
+  }
+}
+//work
+.work {
+
+  & .row {
+    // Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
+    @include row($grid-gutter-width, 10px, 12px, 16px, 40px, 80px);
+    height:100%;
+    overflow: hidden;
+    margin-bottom:100px;
+    
+    &__col-1{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 6, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 6, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 6, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 6, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation-duration: 3s;
+    }
+    &__col-2{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 6, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 6, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 6, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 6, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      animation-duration: 3s;
+    }
+  }
+  & .page_title {
+    font-family: 'YanoneKaffeesatzBold';
+    font-size: 36px;
+    text-align: center;
+    margin-bottom:80px;
+    text-transform: uppercase;
+
+  }
+
+  & .servise__title{
+    font-family: 'Vollkorn';
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom:30px;
+    margin-top:30px;
+  }
+  & p {
+    text-align: justify;
+  }
 
 }
 
+.text-center {
+  text-align: center;
+}
+
+.fixed {
+  width:100vw;
+  height:100vh;
+  overflow: hidden;
+}

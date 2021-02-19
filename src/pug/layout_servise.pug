@@ -1,0 +1,147 @@
+//- Стандартный шаблон страницы
+
+include mixins.pug
+
+doctype html
+html(class='page  no-js', lang='ru')
+
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //- Edge и ряд мобильных браузеров слишком умны. Отключим это.
+    meta(name='format-detection', content='telephone=no')
+    meta(name='format-detection', content='date=no')
+    meta(name='format-detection', content='address=no')
+    meta(name='format-detection', content='email=no')
+    meta(content='notranslate', name='google')
+   
+    //- Фавиконки (https://realfavicongenerator.net)
+    //- link(rel='apple-touch-icon', sizes='180x180', href='/img/favicon/apple-touch-icon.png')
+    //- link(rel='icon', type='image/png', sizes='32x32', href='/img/favicon/favicon-32x32.png')
+    //- link(rel='icon', type='image/png', sizes='16x16', href='/img/favicon/favicon-16x16.png')
+    //- link(rel='manifest', href='/img/favicon/site.webmanifest')
+    //- link(rel='mask-icon', href='/img/favicon/safari-pinned-tab.svg', color='#5bbad5')
+    //- meta(name='msapplication-TileColor', content='#5bbad5')
+    //- meta(name='theme-color', content='#000')
+    //- meta(name='msapplication-navbutton-color', content='#000')
+    //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
+
+    block meta
+      title Обо мне
+
+    block head
+      link(rel='stylesheet', href='css/style.css')
+      script
+        include ../js/head-script.js
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+   
+    .page__inner 
+      .separator_left.separator_left--servise
+        .separator_left__wrapper.animate__animated.animate__fadeInDownBig 
+            h3 АВТОРСКИй КОНТРОЛЬ
+            .separator_left__border.separator_left__border--servise-one
+            .separator_left__border.separator_left__border--servise-two
+      .page__content.servise
+        block content
+          h1.site_title
+           a(href="index.html") Luna Makoi Project
+          .row
+            .row__col-1
+                h2.page_title.animate__animated.animate__backInDown Дополнительные услуги
+                .servise__title АВТОРСКИй КОНТРОЛЬ
+                p Это очень важный, ответственный этап. Начиная работу над проектом, я закрепляю за собой авторское право и намерение воплотить его в жизнь. Как автор знаю все нюансы и способы выхода из тех ли иных ситуаций. 
+                p Возможны разные неожиданности в работе – не всегда все идет по плану. Например, желаемую плитку сняли с производства или заказчика не устраивают сроки поставки определенных материалов и мебели – от этого не застрахован никто.  Могут всплыть нюансы, о которых было неизвестно. Так, планы, зафиксированные в дизайн-проекте, нередко требуют корректировок в процессе ремонта. Основная проблема в том, что все конструкции интерьера тесно связаны между собой. Изменение любой из них требует изменения в других.
+                p Изначально важно понимать цель создания проекта. Он может разрабатываться для примерного понимания образа или же для полной реализации концепции. Только за проект я берусь в редких случаях. Преимущественно мы заключаем договора на проектирование, авторский контроль и комплектацию одновременно.
+                p Ответственности и задачи по авторскому контролю дизайнера прописаны в договоре. Он не включает поездки вместе с заказчиком в магазины для покупки мебели, осветительных приборов, сантехники, декоративных элементов и отделочных материалов. Но это все входит в услугу комплектации дизайн-проекта.  Комплектация – это другая услуга, но я советую клиентам заказывать их в комплексе, чтобы получить готовый реализованный проект.
+                .servise__title КОМПЛЕКТАЦИЯ
+                p Услуга комплектации включает обширную работу по подбору мебели и материалов. Возможен заказ авторской мебели, сантехники, светового оборудования – всего, что нужно для экономии времени заказчика и воплощения в реальность проекта его мечты. Я беру на себя вопросы коммуникации  с менеджерами и поставщиками, подбираю самые выгодные предложения.
+                p Наличие большой базы надежных поставщиков, подрядчиков и налаженные связи с ними позволяет гарантировать качество и адекватную цену выбранных позиций. Подберем то, что соответствует вашим желаниям и вписывается в бюджет.
+                p Этап комплектации включает в себя составление четкого графика поставок, привязанного к стадиям выполнения строительно-монтажных и отделочных работ, а также контроль над его соблюдением.
+                .servise__title Дополнительные услуги
+                p.servise__subtitle Разовый выезд
+                p Услуга разового выезда предполагает проведение консультаций на объекте для строителей и подрядчиков. Она подходит клиентам, которым не нужен ежемесячный авторский надзор. Также возможен выезд в магазины поставщиков с целью подбора материалов, мебели и оборудования.
+                p.servise__price Стоимость 7 000 рублей.
+                .servise__subtitle Авторский контроль
+                p Услуга включает контроль соответствия ремонтно-строительных работ дизайн-проекту. Все детали проекта согласовываются с заказчиками. Каждую неделю ваши исполнители будут получать консультации по предоставленным чертежам. В авторский контроль входит решение всех актуальных вопросов с выездами на объект. Вы будете получать письменную отчетность, фото и видеоматериалы, фиксирующие все стадии строительства и реализации объекта.
+                p.servise__price Стоимость 35 000 рублей в месяц.
+                .servise__subtitle Комплектация
+                p Услуга комплектации включает весь комплекс работ по подбору поставщиков, организацию закупок и поставок мебели, оборудования, освещения, материалов для отделки – всего, что нужно для реализации дизайн-проекта.
+                p.servise__price Стоимость определяется индивидуально.
+                .servise__subtitle Замеры
+                p Включают:
+                ul 
+                    li выезд на объект;
+                    li проведение контрольных замеров;
+                    li фото- и видеофиксацию;
+                    li составление плана обмеров.
+                p.servise__price Стоимость 7 000 рублей.
+                .servise__subtitle Чертежи
+                ul 
+                    li Составим альбом рабочих чертежей для строителей (включая схемы электрики и сантехники);
+                    li Рассчитаем объемы по материалам;
+                    li Проработаем узлы, схемы и развертки.
+                p.servise__price Стоимость 500 рублей за 1 квадратный метр.
+                .servise__subtitle 3D-визуализация
+                p Закажите услугу 3D-визуализации и получите красивые, реалистичные 3D-изображения с интерьерами вашего объекта.
+                p.servise__price Стоимость 1 200 рублей за 1 квадратный метр.
+                .servise__subtitle Эскизная концепция
+                ul 
+                    li Концепция будущего стилистического решения от руки в формате скетчей.
+                    li Мудборд с примерами и аналогами.
+                p.servise__price Стоимость 600 рублей за квадратный метр.
+                .servise__title АВТОРСКИЙКОНТРОЛЬ С КОМАНДОЙ
+                p Услуга комплектации включает обширную работу по подбору мебели и материалов. Возможен заказ авторской мебели, сантехники,cветового оборудования – всего, что нужно для экономии времени заказчика и воплощения в реальность проекта его мечты. Я беру на себя вопросы коммуникации  с менеджерами и поставщиками, подбираю самые выгодные предложения.
+                p Наличие большой базы надежных поставщиков, подрядчиков и налаженные связи с ними позволяет гарантировать качество и адекватную цену выбранных позиций. Подберем то, что соответствует вашим желаниям и вписывается в бюджет.
+                p Этап комплектации включает в себя составление четкого графика поставок, привязанного к стадиям выполнения строительно-монтажных и отделочных работ, а также контроль над его соблюдением.
+
+
+
+
+ 
+               
+             
+
+      .separator_right.separator_right--servise
+        .separator_right__wrapper.animate__animated.animate__fadeInDownBig 
+            .separator_right__border.separator_right__border--servise-one
+            h3 ADDITIONAL SERVICES 
+            .separator_right__border.separator_right__border--servise-two
+
+    +bottom-block()
+          ul.sotial 
+            li 
+              a.sotial.insta(href='/')
+                svg(class="sotial" width="23px" height="23px")
+                  use(xlink:href="img/sprite.svg#insta") 
+            li 
+              a.sotial.fb(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#fb") 
+            li 
+              a.sotial.twitter(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#twitter") 
+          p #[a(href='tel:+79183009532') 8 918 300 95 32]
+          p #[a(href='mailto:Lunela.makoi@gmail.com') Lunela.makoi@gmail.com] 
+          p #[a(href='mailto:Lunela.makoi@gmail.com') @Lina_makoi_designer]    
+          #wave_wrapper.wave_wrapper 
+              audio#audio(autoplay loop)
+                source(src="img/sound/summer.mp3" type="audio/mpeg")
+              svg(class="wave played" width="100px" height="43px")
+                use(xlink:href="img/sprite.svg#wave") 
+    .page__footer-wrapper
+        +page-footer()
+          block footer
+            .row
+              .row__col-1 (с) 2020 Luna Makoi Projekt ® <br>Все права защищены
+              .row__col-2.footer-center Создание сайта <br> #[a(href='/') indigo market]
+              .row__col-3 
+                ul 
+                  li  #[a(href='about.html') Обо мне]
+                  li  #[a(href='project.html') Проекты]
+                  li  #[a(href='news.html') Новости]
+                  li  #[a(href='servise.html') Услуги]
+                div.footer-right Luna <br> Makoi <br> Project
+    script(src='js/bundle.js')

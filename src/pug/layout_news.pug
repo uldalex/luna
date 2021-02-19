@@ -27,7 +27,7 @@ html(class='page  no-js', lang='ru')
     //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
 
     block meta
-      title Проекты
+      title Новости
 
     block head
       link(rel='stylesheet', href='css/style.css')
@@ -38,42 +38,46 @@ html(class='page  no-js', lang='ru')
     noscript У вас отключен JavaScript. Это пугает.
    
     .page__inner 
-      .separator_left.separator_left--project
+      .separator_left.separator_left--news
         .separator_left__wrapper.animate__animated.animate__fadeInDownBig 
-            h3 command
-            .separator_left__border
-      .page__content.project
+            h3 news
+            .separator_left__border.separator_left__border--news
+      .page__content.news
         block content
           h1.site_title
            a(href="index.html") Luna Makoi Project
          
-          .row
-              .row__col-1.row__el.animate__animated.animate__fadeInTopLeft 
-                .project__title.mr-20 концепции для инвесторов
-                img(src="img/p1.jpg")
-                
-              .row__col-2.row__el.animate__animated.animate__fadeInTopRight
-                img(src="img/p2.jpg")
-                .project__title.ml-40 проекты в картинках
-               
-              .row__col-3.row__el.animate__animated.animate__fadeInBottomLeft 
-                .project__title.rotate этапы проектирования
-                img(src="img/p3.jpg")
-               
-              .row__col-4.row__el.animate__animated.animate__fadeInBottomRight
-                 img(src="img/p2.jpg")
-                 .project__title.ml-40 пример готового проекта
-               
+          .row.mb-100
+              .row__col-1.animate__animated.animate__fadeInDownBig 
+                .news__img.mt-100 
+                    img(src="img/n2.jpg", alt="")
+                    .news__rotate.news__rotate--one каргее кпк
+                .wrapper 
+                    p HI TACH
+                    p.mb-0 "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+              .row__col-2.animate__animated.animate__fadeInUpBig
+                .news__img
+                    .news__rotate.news__rotate--two каргее кпкпук р упурур 
+                    img(src="img/n1.jpg", alt="")
+                .news__img.mt-200
+                    img(src="img/n3.jpg", alt="")
+                    .news__rotate.news__rotate--tree каргее кпк 
+              .row__col-3.animate__animated.animate__fadeInDownBig 
+                div.wrapper
+                    p Выбираем обои: 4 полезных совета Совет №1. Выбирайте по цветам и коллекциям 
+                    p Лучше всего остановить свой выбор на обоях из одной коллекции. Так, у вас получится создать интерьер, который будет гармоничен, даже если вы купите обои с разными принтами. Не забывайте о том, что менять обои каждый месяц – не только затратно по финансам, но и отнимает множество времени, которое не всегда есть. Поэтому стоит внимательно отнестись к своему выбору. И не торопитесь покупать всю отделку в одном салоне, обязательно присмотрите несколько вариантов, чтобы было из чего выбрать.
+                    a.btn(href="#") Подробнее
+                .news__img.mt-100 
+                    .news__rotate.news__rotate--four каргее кпкпук р упурур
+                    img(src="img/n4.jpg", alt="")
+                    
+              
 
-      .separator_right.separator_right--project
+      .separator_right.separator_right--news
         .separator_right__wrapper.animate__animated.animate__fadeInDownBig 
-            .separator_right__border
-           
-      .separator_bottom 
-        .separator_bottom__wrapper 
-            .separator_bottom__border--one.wow.animate__animated.animate__fadeInRightBig 
-            .separator_bottom__border--two.wow.animate__animated.animate__fadeInLeftBig 
-            h3.wow.animate__animated.animate__fadeInRightBig projects
+            .separator_right__border.separator_right__border--news
+            h3 interview 
+
     +bottom-block()
           ul.sotial 
             li 
