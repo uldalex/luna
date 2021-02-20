@@ -913,7 +913,7 @@ $.fn.ripples.noConflict = function() {
 
 })));
 $(function(){
-    $('.home').ripples({
+    $('.water').ripples({
         resolution: 256,
         perturbance: 0.02
     });
@@ -931,11 +931,11 @@ $(audioButton).on('click', function() {
  $('svg.wave').toggleClass('played');
  
  });
+ 
+
  $('.img').on('click', function() {
 	$(this).toggleClass('scale');
-
-	
-	});
+});
 
 
   var wow = new WOW(
@@ -954,6 +954,6 @@ $(audioButton).on('click', function() {
 	}
   );
   wow.init();
+  $(audio).play();
 });
 
- 

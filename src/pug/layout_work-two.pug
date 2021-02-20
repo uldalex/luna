@@ -1,0 +1,168 @@
+//- Стандартный шаблон страницы
+
+include mixins.pug
+
+doctype html
+html(class='page  no-js', lang='ru')
+
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    //- Edge и ряд мобильных браузеров слишком умны. Отключим это.
+    meta(name='format-detection', content='telephone=no')
+    meta(name='format-detection', content='date=no')
+    meta(name='format-detection', content='address=no')
+    meta(name='format-detection', content='email=no')
+    meta(content='notranslate', name='google')
+   
+    //- Фавиконки (https://realfavicongenerator.net)
+    //- link(rel='apple-touch-icon', sizes='180x180', href='/img/favicon/apple-touch-icon.png')
+    //- link(rel='icon', type='image/png', sizes='32x32', href='/img/favicon/favicon-32x32.png')
+    //- link(rel='icon', type='image/png', sizes='16x16', href='/img/favicon/favicon-16x16.png')
+    //- link(rel='manifest', href='/img/favicon/site.webmanifest')
+    //- link(rel='mask-icon', href='/img/favicon/safari-pinned-tab.svg', color='#5bbad5')
+    //- meta(name='msapplication-TileColor', content='#5bbad5')
+    //- meta(name='theme-color', content='#000')
+    //- meta(name='msapplication-navbutton-color', content='#000')
+    //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
+
+    block meta
+      title Готовые проекты
+
+    block head
+      link(rel='stylesheet', href='css/style.css')
+      script
+        include ../js/head-script.js
+
+  body
+    noscript У вас отключен JavaScript. Это пугает.
+   
+    .page__inner 
+      .separator_left.separator_left--servise
+        .separator_left__wrapper.animate__animated.animate__fadeInDownBig 
+            h3 living room
+            .separator_left__border.separator_left__border--work-one
+            .separator_left__border.separator_left__border--work-two
+      .page__content.works
+        block content
+          h1.site_title
+           a(href="index.html") Luna Makoi Project
+           h2.page_title.animate__animated.animate__backInDown Готовые проекты
+           ul.main_menu 
+            li #[a(href='work-one.html') 1 проект]
+            li #[a(href='work-two.html') 2 проект]
+            li #[a(href='work-three.html') 3 проект]
+            li #[a(href='work-four.html') 4 проект]
+          .grid
+            .img.img-1.wow.animate__animated.animate__pulse
+              img(src="img/w2-1.jpg" )
+            .content-flex 
+              div 
+                .proekts__title Проект прощадью 84 кв.м <p></p> апартаменты на 4м этаже зарубежного жилого комплекса <span>Концептуальный проект создан в 2020 году, без ведения авторского контроля</span>
+              .img.img-2-2.mt-80.ml-40 
+                img(src="img/w2-2.jpg").wow.animate__animated.animate__fadeInLeftBig
+ 
+          .grid-6
+              div 
+                .img.img-2-3 
+                  img(src="img/w2-4.jpg").wow.animate__animated.animate__fadeInLeftBig
+                .img.img-2-6.mt-40
+                  img(src="img/w2-6.jpg").wow.animate__animated.animate__fadeInLeftBig
+                .img.img-2-7.mt-40
+                  img(src="img/w2-7.jpg").wow.animate__animated.animate__fadeInLeftBig
+              .img.img-2-4.mt-40.ml-40 
+                img(src="img/w2-5.jpg").wow.animate__animated.animate__fadeInLeftBig
+              .img.img-2-5.mt--30.ml-20 
+                img(src="img/w2-3.jpg").wow.animate__animated.animate__fadeInLeftBig
+              
+          .grid
+            div
+            .img.img-2-8.wow.animate__animated.animate__fadeInRightBig.mt--100
+                    img(src="img/w2-8.jpg")
+                
+          .grid-4.mt-40
+              .img.img-2-9.wow.animate__animated.animate__fadeInLeftBig.mt--80 
+                img(src="img/w2-9.jpg")
+              .img.img-2-10.wow.animate__animated.animate__fadeInLeftBig.mr-40 
+                img(src="img/w2-10.jpg")
+              .img.img-2-11.wow.animate__animated.animate__fadeInRightBig
+                img(src="img/w2-11.jpg")
+            
+          .grid-flex.mt-40
+            .img.img-2-12.wow.animate__animated.animate__fadeInRightBig
+                img(src="img/w2-12.jpg") 
+            .img.img-2-13.wow.animate__animated.animate__fadeInRightBig
+                img(src="img/w2-13.jpg")
+            .img.img-2-14.wow.animate__animated.animate__fadeInRightBig
+                img(src="img/w2-14.jpg")
+          .grid.mb-80
+            div 
+              .img.img-2-15.wow.animate__animated.animate__fadeInRightBig.mb-40
+                    img(src="img/w2-15.jpg")
+              .img.img-2-16.wow.animate__animated.animate__fadeInRightBig
+                    img(src="img/w2-16.jpg")
+              .img.img-2-21.wow.animate__animated.animate__fadeInRightBig.mr-40.mt-40
+                    img(src="img/w2-21.jpg")
+              .img.img-2-22.wow.animate__animated.animate__fadeInRightBig.mt-40
+                    img(src="img/w2-22.jpg") 
+            div
+              .img.img-2-17.wow.animate__animated.animate__fadeInRightBig.mt-80.mr-40
+                    img(src="img/w2-17.jpg") 
+              .img.img-2-18.wow.animate__animated.animate__fadeInRightBig.mt-80
+                    img(src="img/w2-18.jpg")
+              .img.img-2-19.wow.animate__animated.animate__fadeInRightBig.mt-40.mr-40.ml-40
+                    img(src="img/w2-19.jpg")
+              .img.img-2-20.wow.animate__animated.animate__fadeInRightBig.mt-40
+                    img(src="img/w2-20.jpg")      
+            
+
+
+
+
+ 
+               
+             
+
+      .separator_right.separator_right--works.separator_right--works-1
+        .separator_right__wrapper.animate__animated.animate__fadeInDownBig 
+            .separator_right__border.separator_right__border--works-one
+            h3 &nbsp;&nbsp;&nbsp;&nbsp;apartments 
+            .separator_right__border.separator_right__border--works-two
+
+
+    +bottom-block()
+          ul.sotial 
+            li 
+              a.sotial.insta(href='/')
+                svg(class="sotial" width="23px" height="23px")
+                  use(xlink:href="img/sprite.svg#insta") 
+            li 
+              a.sotial.fb(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#fb") 
+            li 
+              a.sotial.twitter(href='/')
+                svg(class="sotial" width="22px" height="23px")
+                  use(xlink:href="img/sprite.svg#twitter") 
+          p #[a(href='tel:+79183009532') 8 918 300 95 32]
+          p #[a(href='mailto:Lunela.makoi@gmail.com') Lunela.makoi@gmail.com] 
+          p #[a(href='mailto:Lunela.makoi@gmail.com') @Lina_makoi_designer]    
+          #wave_wrapper.wave_wrapper 
+              audio#audio(autoplay loop)
+                source(src="img/sound/summer.mp3" type="audio/mpeg")
+              svg(class="wave played" width="100px" height="43px")
+                use(xlink:href="img/sprite.svg#wave") 
+    .page__footer-wrapper
+        +page-footer()
+          block footer
+            .row
+              .row__col-1 (с) 2020 Luna Makoi Projekt ® <br>Все права защищены
+              .row__col-2.footer-center Создание сайта <br> #[a(href='/') indigo market]
+              .row__col-3 
+                ul 
+                  li  #[a(href='about.html') Обо мне]
+                  li  #[a(href='project.html') Проекты]
+                  li  #[a(href='news.html') Новости]
+                  li  #[a(href='servise.html') Услуги]
+                div.footer-right Luna <br> Makoi <br> Project
+    script(src='js/bundle.js')
