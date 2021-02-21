@@ -27,7 +27,7 @@ html(class='page  no-js', lang='ru')
     //- meta(name='apple-mobile-web-app-status-bar-style', content='#000')
 
     block meta
-      title Проекты
+      title Команда
 
     block head
       link(rel='stylesheet', href='css/style.css')
@@ -36,48 +36,46 @@ html(class='page  no-js', lang='ru')
 
   body
     noscript У вас отключен JavaScript. Это пугает.
-   
-    .page__inner 
-      .separator_left.separator_left--project
+    .page__inner
+      .bg_team-1
+            img(src="img/team_bg1.jpg")
+      .bg_team-2
+            img(src="img/team_bg2.jpg")
+      .separator_left.separator_left--team
         .separator_left__wrapper.animate__animated.animate__fadeInDownBig 
-            h3 command
-            .separator_left__border
-      .page__content.project
+            h3 Кто будет с вами работать
+            .separator_left__border.separator_left__border--team
+      .home__content.team
         block content
-          h1.site_title
-           a(href="index.html") Luna Makoi Project
-         
-          .row
-              .row__col-1.row__el.animate__animated.animate__fadeInTopLeft 
-                a.project__title.mr-20(href="consept.html") концепции для инвесторов
-                a.project_img(href="consept.html")
-                  img(src="img/p1.jpg")
-                
-              .row__col-2.row__el.animate__animated.animate__fadeInTopRight
-                a.project_img(href="work-image.html")
-                  img(src="img/p2.jpg")
-                a.project__title.ml-40(href="work-image.html") проекты в картинках
-               
-              .row__col-3.row__el.animate__animated.animate__fadeInBottomLeft 
-                a.project__title.rotate(href="work.html") этапы проектирования
-                a.project_img(href="work.html")
-                  img(src="img/p3.jpg")
-               
-              .row__col-4.row__el.animate__animated.animate__fadeInBottomRight
-                 a.project_img(href="work-one.html")
-                   img(src="img/p4.jpg")
-                 a.project__title.ml-40(href="work-one.html") пример готового проекта
-               
-
-      .separator_right.separator_right--project
+          h1.site_title.animate__animated.animate__pulse Luna Makoi Project
+          .row 
+            .row__col-1 
+                .team-card
+                  .team-card__img
+                    img(src="img/t1.jpg")
+                  .team-card__title NAME 
+                  .team-card__content Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+            .row__col-2
+                .team-card
+                  .team-card__img
+                    img(src="img/t2.jpg")
+                  .team-card__title NAME 
+                  .team-card__content Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+                .team-card
+                  .team-card__img
+                    img(src="img/t3.jpg")
+                  .team-card__title NAME 
+                  .team-card__content Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+            .row__col-3
+                .team-card
+                  .team-card__img
+                    img(src="img/t4.jpg")
+                  .team-card__title NAME 
+                  .team-card__content Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+      .separator_right.separator_right--team
         .separator_right__wrapper.animate__animated.animate__fadeInDownBig 
-            .separator_right__border
-           
-      .separator_bottom 
-        .separator_bottom__wrapper 
-            .separator_bottom__border--one.wow.animate__animated.animate__fadeInRightBig 
-            .separator_bottom__border--two.wow.animate__animated.animate__fadeInLeftBig 
-            h3.wow.animate__animated.animate__fadeInRightBig projects
+            .separator_right__border.separator_right__border--team
+      h3.h3_team command
     +bottom-block()
           ul.sotial 
             li 
@@ -107,7 +105,7 @@ html(class='page  no-js', lang='ru')
               .row__col-1 (с) 2020 Luna Makoi Projekt ® <br>Все права защищены
               .row__col-2.footer-center Создание сайта <br> #[a(href='/') indigo market]
               .row__col-3 
-                ul 
+                ul  
                   li  #[a(href='about.html') Обо мне]
                   li  #[a(href='project.html') Проекты]
                   li  #[a(href='news.html') Новости]

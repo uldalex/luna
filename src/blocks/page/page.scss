@@ -94,6 +94,7 @@ html, body {
 
   &__footer-wrapper {
     flex-shrink: 0;
+    position:relative;
   }
 }
 
@@ -829,6 +830,12 @@ svg.wave {
         letter-spacing: 2px;
       }
     }
+    &--team {
+    
+      & h3 {
+        margin-top:110%;
+      }
+    }
     @media screen and (max-width: 769px) {
       &--news {
         left:0;
@@ -918,6 +925,18 @@ svg.wave {
   &--works-1 {
     right:-240px!important;
   }
+  &--images {
+    right: -350px;
+
+    & h3{
+      margin-top: 70%;
+    }
+    & .separator_right__border--works-two {
+      margin-top: 50%;
+      height:30%;
+      margin-left:18px;
+    } 
+  }
   &--consept {
     right:-470px; 
     & h3 {
@@ -971,6 +990,24 @@ svg.wave {
       right:-300px;
     }
     
+  }
+  &--team {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100px;
+    height: 100%;
+    width: 20px;
+    overflow: hidden;
+   
+    
+    & .separator_right__border--team {
+      width: 60px;
+      height: 150px;
+      background-color: #C4C4C4;
+      margin-left: 12px;
+    }
+
   }
   @media screen and (max-width: 480px) {
     &--consept {
@@ -1193,9 +1230,16 @@ svg.wave {
   & .site_title {
     margin-bottom:40px;
   }
-  & img {
-    width:295px;
-    height:295px;
+  & .project_img {
+    min-width:295px;
+    min-height:295px;
+    & img {
+      width:295px;
+      height:295px;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
   }
   &__title {
     font-family: 'Vollkorn';
@@ -2491,3 +2535,157 @@ transition: all 0.3s linear;
   }
   }
 }
+//team 
+.team {
+  position: relative;
+  z-index: 2;
+
+  & .row {
+    // Родитель. Указаны промежутки между ячейками: XS|SM|MD|LG|XL|XXL;
+    @include row($grid-gutter-width, 10px, 12px, 16px, 40px, 80px);
+    height:100%;
+    overflow: hidden;
+     margin-top:50px;
+    
+    &__col-1{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 6, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 4, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 4, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 4, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    &__col-2{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 6, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 4, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 4, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 4, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    &__col-3{
+      @include col(); // малые ширины — 12 из 12, промежутки по умолчанию
+      @include col(sm, 12, $grid-columns, 10px);  // SM (480 по умолчанию) — 6 из 12, промежутки 10px
+      @include col(md, 6, $grid-columns, 12px);  // MD (768 по умолчанию) — 4 из 12, промежутки 12px
+      @include col(lg, 4, $grid-columns, 16px);  // LG (992 по умолчанию) — 3 из 12, промежутки 16px
+      @include col(xl, 4, $grid-columns, 60px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
+      @include col(xxl, 4, $grid-columns, 80px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+  }
+  & .team-card {
+    width:100%;
+    margin-bottom:40px;
+    padding: 1rem 2rem;
+    text-align: center;
+
+    &__img {
+      width:270px;
+      height:270px;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius:50%;
+      transition: all 0.5s linear;
+      opacity:0.8;
+      & img {
+       width: 100%;
+       height: 100%;
+       object-fit:cover;
+       filter: grayscale(2);
+      }
+
+      &:hover {
+        transform: scale(1.1);
+        opacity:1;
+      }
+    }
+    &__title {
+      font-family:'Vollkorn';
+      font-weight:600;
+      font-size:18px;
+      margin: 1rem 0;
+    }
+
+  }
+  @media screen and (max-width: 480px) {
+      padding:0 2rem;
+    
+    .team-card {
+      padding:1rem 0;
+    }
+  }  
+}
+ .h3_team {
+    transform-origin: 80px 80px;
+    transform: rotate(-90deg);
+    margin-top: 120%;
+    color: #D4D4D4;
+    font-family: 'VOLLKORN';
+    font-weight: 400;
+    font-size:36px;
+    position: absolute;
+    bottom: 0;
+    right: 200px;
+  }
+  .bg_team-1 {
+    position:absolute;
+    left:-200px;
+    width: 400px;
+    height:800px;
+    bottom:0;
+    filter: opacity(75%);
+    background-color: #f5f2f2;
+    z-index: 0;
+    & img {
+      height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.1;
+    position: absolute;
+    left: -200px;
+    }
+  }
+  .bg_team-2 {
+    position:absolute;
+    right:-250px;
+    width: 300px;
+    height:800px;
+    bottom:300px;
+    filter: opacity(75%);
+    z-index: 0;
+    & img {
+      height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    position: absolute;
+    right: 0px;
+    transform: scale(-1, 1);
+    filter: grayscale(2);
+    }
+  }
+  @media screen and (max-width: 769px) {
+   
+    .bg_team-2 {
+    display: none;
+  }
+  .bg_team-1 {
+    display: none;
+  }
+  }
+  @media screen and (max-width: 480px) {
+   
+   .h3_team  {
+     display: none;
+ }
+  }
