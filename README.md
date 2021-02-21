@@ -7,7 +7,13 @@
 #[Новости](https://uldalex.github.io/luna/build/news.html) <br>
 #[Концепция для инвесторов](https://uldalex.github.io/luna/build/consept.html) <br>
 #[Услуги](https://uldalex.github.io/luna/build/servise.html)  <br>
-
+#[Порядок работ и этапы проектирования](https://uldalex.github.io/luna/build/work.html)<br>
+#[Готовый проект 1](https://uldalex.github.io/luna/build/work-one.html)<br>
+#[Готовый проект 2](https://uldalex.github.io/luna/build/work-two.html)<br>
+#[Готовый проект 3](https://uldalex.github.io/luna/build/work-one.html)<br>
+#[Готовый проект 4](https://uldalex.github.io/luna/build/work-two.html)<br>
+#[Проекты в картинках](https://uldalex.github.io/luna/build/work-image.html)<br>
+#[Бонус. Команда.](https://uldalex.github.io/luna/build/team.html)<br>
 
 ## Парадигма
 
