@@ -48,7 +48,7 @@ html(class='page  no-js', lang='ru')
             li #[a(href='project.html') Проекты]
             li #[a(href='news.html') Новости]
             li #[a(href='servise.html') Услуги]
-        +bottom-block()
+        +bottom-block() 
           ul.sotial 
             li 
               a.sotial.insta(href='/')
@@ -66,9 +66,9 @@ html(class='page  no-js', lang='ru')
           p #[a(href='mailto:Lunela.makoi@gmail.com') Lunela.makoi@gmail.com] 
           p #[a(href='t.me/@Lina_makoi_designer') @Lina_makoi_designer]    
           #wave_wrapper.wave_wrapper 
-              audio#audio(autoplay loop)
+              audio#audio( loop)
                 source(src="img/sound/summer.mp3" type="audio/mpeg")
-              svg(class="wave played" width="100px" height="43px")
+              svg(class="wave " width="100px" height="43px")
                 use(xlink:href="img/sprite.svg#wave") 
       .page__footer-wrapper
         +page-footer()

@@ -64,8 +64,15 @@
  font-display: swap;
 }
 @font-face {
-  font-family: 'SS';
- src:  url('../fonts/ss.woff') format('woff');
+  font-family: 'RR';
+ src:  url('../fonts/RobotoRegular.woff2') format('woff');
+  font-weight: 400;
+  font-style: normal;
+ font-display: swap;
+}
+@font-face {
+  font-family: 'RB';
+ src:  url('../fonts/RobotoBold.woff2') format('woff');
   font-weight: 400;
   font-style: normal;
  font-display: swap;
@@ -248,7 +255,7 @@ h5,
 h6 {
   margin-top: 1em;
   margin-bottom: 0.5em;
-  font-family: $font-family;
+  font-family: Abel;
   font-weight: 700;
   line-height: 1.2;
   color: currentColor;
@@ -354,7 +361,7 @@ blockquote {
 code,
 kbd,
 pre {
-  font-family: $font-family--monospace;
+  font-family: 'Abel';
 }
 
 code {
@@ -411,8 +418,13 @@ pre {
   }
 }
 .animate__delay-8s{
-  animation-delay: 8s;
-  animation-duration: 2s;
+  animation-delay: 4s;
+  animation-duration: 6s;
+
+@media screen and (max-width: 600px) {
+  animation-delay: 2s;
+  animation-duration: 4s;
+}
 }
 //footer
 .page-footer {
@@ -483,6 +495,9 @@ pre {
     margin-left: 32px;
     font-size: 18px;
     letter-spacing: 1.5px;
+     @media screen and (max-width: 600px) {
+      margin-left: 0px;
+     }
   }
   @media screen and (max-width: 600px) { 
       text-align: center;
@@ -612,8 +627,11 @@ right:0;
 bottom:0;
 left:0;
  animation: rotate 8s  ease-in-out;
-
+@media screen and (max-width: 600px) { 
+  animation: rotate 6s  ease-in-out;
 }
+}
+
 @keyframes rotate {
     from {
         opacity: 0;
@@ -1146,7 +1164,7 @@ svg.wave {
   }
   
   & p {
-    font-family: 'ss';
+    font-family: 'RR';
     text-align: justify;
 
     &.que {
@@ -1238,7 +1256,7 @@ svg.wave {
       height:295px;
     }
     &:hover {
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
   &__title {
@@ -1465,7 +1483,7 @@ transition: all 0.3s linear;
     text-align: justify;
   }
   & .servise__subtitle {
-    font-family: 'SS';
+    font-family: 'RR';
     font-weight: 600;
     margin:15px 0 15px 0;
   }
@@ -1823,18 +1841,20 @@ transition: all 0.3s linear;
   }
 
   .number-card {
-    padding: 15px 40px;
+    padding: 25px 40px;
     animation-duration: 3s;
 
     &__number {
       font-size: 144px;
       font-weight:600;
       text-align: center;
-      font-family: 'SFRegular';
+      font-family: 'RB';
+      height:184px;
 
       & .rotate {
         display: inline-block;
         transform: rotate(-90deg);
+        transform-origin: 20%;
       }
     }
     &__title {
@@ -2017,7 +2037,7 @@ transition: all 0.3s linear;
     }
     &:hover {
       cursor: pointer;
-      opacity: 0.8;
+      opacity: 0.6;
     }
 
     &.scale{
