@@ -7,7 +7,7 @@
  const $ = require('jquery'); 
 
  const WOW =  require('./utils/WOW.js'); 
-const { EvalSourceMapDevToolPlugin } = require('webpack');
+
  
 $(document).ready(function() {
 /**
@@ -1053,12 +1053,18 @@ $(function(){
 		return !$.cookie(key);
 	};
 
-	$.cookie('PlayerCooke', 'false');
+	
+	
+	
+
+}));
+
 	
 	if($.cookie("PlayerCooke")=='true'){ 
 
 		$('.wave').addClass('played');
 		$('#audio').get(0).play();
+		$('#audio')[0].currentTime = $.cookie('PlayerTime');
 			
 	} if($.cookie("PlayerCooke")=='false'){ 
 		$('.wave').removeClass('played');
@@ -1066,34 +1072,35 @@ $(function(){
 			
 		
 	}
-	
-	
-	$("#wave_wrapper").on ('click', function(){
-		var play;
-		if($.cookie("PlayerCooke")=='false'){ 
-			var play = true;
-		}
-		if($.cookie("PlayerCooke")=='true'){ 
-			var play = false;
-		}
-	
-		if (play = true){
-			$.cookie('PlayerCooke', true); 
-			$('.wave').addClass('played');
-			$('#audio').get(0).play();
-			var play = false;
-		}else{
-		$.cookie('PlayerCooke', false); 
+
+$("#wave_wrapper").on ('click', function(){
+	$.cookie();
+	if(!$.cookie('PlayerCooke')) {
+		$.cookie('PlayerCooke', 'true'); 
+		$('.wave').addClass('played');
+		$('#audio').get(0).play();
+		//$('#audio')[0].currentTime = $.cookie('timePlayed');
+    }
+	else if($.cookie("PlayerCooke")=='false'){ 
+		$.cookie('PlayerCooke', 'true'); 
+		$('.wave').addClass('played');
+		$('#audio').get(0).play();
+	//	$('#audio')[0].currentTime = $.cookie('timePlayed');
+	}
+	else if($.cookie("PlayerCooke")=='true'){ 
+		$.cookie('PlayerCooke', 'false'); 
 		$('.wave').removeClass('played');
 		$('#audio').get(0).pause();
-		var play = true;
-		
-		}alert(play)
-	})
-}));
+	//	$('#audio')[0].currentTime = $.cookie('timePlayed');
+	}
 
-	
 });
+$(window).on('beforeunload ',function() {
+   
+	var vid = document.getElementById("audio"); 
+    var currentTime = vid.currentTime;
+  
+   $.cookie('PlayerTime', currentTime); 
 
-
-
+});
+});
