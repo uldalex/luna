@@ -64,6 +64,13 @@
  font-display: swap;
 }
 @font-face {
+  font-family: 'ss';
+ src:  url('../fonts/ss.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+ font-display: swap;
+}
+@font-face {
   font-family: 'RR';
  src:  url('../fonts/RobotoRegular.woff2') format('woff');
   font-weight: 400;
@@ -1164,7 +1171,7 @@ svg.wave {
   }
   
   & p {
-    font-family: 'RR';
+   
     text-align: justify;
 
     &.que {

@@ -37,6 +37,7 @@ let config = {
     'src/fonts/YanoneKaffeesatzMedium.woff': 'fonts/',
     'src/fonts/Vollkorn.woff': 'fonts/',
     'src/fonts/SFRegular.woff': 'fonts/',
+    'src/fonts/ss.woff': 'fonts/',
     'src/fonts/RobotoRegular.woff2': 'fonts/',
     'src/fonts/RobotoBold.woff2': 'fonts/',
     "./src/img/*.{png,svg,jpg,jpeg}": "img/",
