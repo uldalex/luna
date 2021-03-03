@@ -407,7 +407,7 @@ pre {
   margin: 0 auto;
   text-align: center;
   font-weight:400;
-  margin-top: 77px;
+  margin-top: 37px;
   text-transform: uppercase;
   font-family: 'Vollkorn';
  
@@ -425,8 +425,8 @@ pre {
   }
 }
 .animate__delay-8s{
-  animation-delay: 4s;
-  animation-duration: 6s;
+
+  animation-duration: 15s;
 
 @media screen and (max-width: 600px) {
   animation-delay: 2s;
@@ -701,6 +701,8 @@ svg.wave {
     justify-content: center;
     position: relative;
     z-index: 2;
+    opacity:1;
+    
 
     & li {
       list-style:none;
@@ -1437,18 +1439,38 @@ svg.wave {
 }
 a.btn {
   background: #F8F6DF;
-border: 1px solid #000000;
+  border: 1px solid #F8F6DF;
 box-sizing: border-box;
 letter-spacing: 0.2em;
 text-transform: uppercase;
 font-size: 11px;
 padding: 15px 22px;
 transition: all 0.3s linear;
+position:relative;
 
-  &:hover, &:active, &:focus {
-    background: #efeab8;
-    outline: none;
-    box-shadow: none;
+
+ &:before {
+  content:'';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 48px;
+	background: rgba(239, 234, 184, 0.3);
+	border-radius: 3px;
+	transition: all 2s ease;
+  
+ }
+
+  &:hover:before, &:active:before, &:focus:before {
+    width:100%;
+  }
+  &:hover, &:active, &:focus{
+   outline: none;
+   box-shadow: none;
+   background-color: #F8F6DF;
+   border: 1px solid #000000;
+  
   }
 }
 .servise {
