@@ -213,6 +213,3 @@ node createBlock.js demo-block pug js # создаст папку блока, de
   }
 }
 ```
-
-Посмотреть примеры и попробовать вживую можно в [этом примере с codepen.io](https://codepen.io/nicothin/pen/aJEOwE?editors=1100).
-
