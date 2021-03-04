@@ -701,7 +701,8 @@ svg.wave {
     justify-content: center;
     position: relative;
     z-index: 2;
-    opacity:1;
+    animation-delay: 2s;
+   animation-duration: 20s;
     
 
     & li {
@@ -741,10 +742,14 @@ svg.wave {
       margin-top: 47px;
     }
     & .main_menu {
-
+      flex-direction: column;
       & li {
         width: auto;
-        padding: 0 0.7rem;
+        padding: 1rem  0.7rem;
+
+        & a {
+          font-size: 25px;
+        }
       }
     }
  
@@ -756,7 +761,7 @@ svg.wave {
       & li {
        
         & a {
-          font-size: 16px;
+        
         }
       }
     }
