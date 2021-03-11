@@ -474,6 +474,7 @@ pre {
     @include col(xl, 3, $grid-columns, 20px);  // XL (1200 по умолчанию) — 2 из 12, промежутки 20px
     @include col(xxl, 3, $grid-columns, 26px); // XXL (1800 по умолчанию) — 1 из 12, промежутки 26px
     display: flex;
+    justify-content: center;
   }
 }
   & a {
@@ -1075,7 +1076,7 @@ svg.wave {
       width: 500px;
       height: 0.5px;
       background-color: #000;
-      margin-left: 12px;
+      margin-left: 120px;
       position: absolute;
       top:18px;
       left:50px;
