@@ -5865,8 +5865,25 @@ $(document).ready(function() {
 			},
 		}
 		}).mount();
-	  }
-
+  }
+      if ($("#signblocks1").length) {
+        new Splide('#signblocks1', {
+          perPage: 1,
+          perMove: 1,
+          type: 'loop',
+          autoplay: true,
+          pagination: false,
+          focus  : 'center',
+          interval: 4000,
+          pauseOnHover: true,
+          speed: 800,
+          breakpoints: {
+          640: {
+            perPage: 1,
+          },
+        }
+        }).mount();
+        }
 /**
  * jQuery Ripples plugin v0.6.3 / https://github.com/sirxemic/jquery.ripples
  * MIT License
