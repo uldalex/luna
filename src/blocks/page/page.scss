@@ -1108,6 +1108,8 @@ svg.wave {
   @media screen and (max-width: 600px) {
     &__content {
       padding: 0 30px;
+      position:relative;
+      z-index:10;
     }
   }
 }

@@ -5884,6 +5884,7 @@ $(document).ready(function() {
         }
         }).mount();
         }
+        
 /**
  * jQuery Ripples plugin v0.6.3 / https://github.com/sirxemic/jquery.ripples
  * MIT License
